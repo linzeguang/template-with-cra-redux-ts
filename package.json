@@ -1,0 +1,135 @@
+{
+  "name": "template-with-cra-redux-ts",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "craco start",
+    "build": "craco build",
+    "build:analyzer": "craco build --analyzer",
+    "test": "craco test",
+    "preview": "npx serve -s build",
+    "lint": "eslint src --ext .js,.jsx,.ts,.tsx",
+    "lint:fix": "eslint src --ext .js,.jsx,.ts,.tsx --fix",
+    "format": "prettier \"src/**/*.{js,jsx,ts,tsx,css,scss,less}\" --write",
+    "prepare": "husky install",
+    "release": "standard-version",
+    "postrelease": "git push && git push --tags --no-verify",
+    "version-tag:major": "npm run release -- --release-as major",
+    "version-tag:minor": "npm run release -- --release-as minor",
+    "version-tag:patch": "npm run release -- --release-as patch",
+    "version-tag:premajor": "npm run version-tag:major -- --prerelease",
+    "version-tag:preminor": "npm run version-tag:minor -- --prerelease",
+    "version-tag:prepatch": "npm run version-tag:patch -- --prerelease",
+    "version-tag:prerelease": "npm run release -- --prerelease"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@reduxjs/toolkit": "^1.9.2",
+    "ahooks": "^3.7.5",
+    "axios": "^1.3.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-redux": "^8.0.5",
+    "react-router-dom": "^6.8.1",
+    "redux-persist": "^6.0.0"
+  },
+  "devDependencies": {
+    "@craco/craco": "^7.0.0",
+    "@craco/types": "^7.0.0",
+    "@prerenderer/webpack-plugin": "^5.0.5",
+    "@types/node": "^17.0.45",
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
+    "@typescript-eslint/eslint-plugin": "^5.50.0",
+    "@typescript-eslint/parser": "^5.50.0",
+    "eslint": "^8.33.0",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "husky": "^8.0.2",
+    "lint-staged": "^13.1.1",
+    "prettier": "^2.8.4",
+    "progress-bar-webpack-plugin": "^2.1.0",
+    "puppeteer": "^19.7.3",
+    "react-scripts": "5.0.1",
+    "standard-version": "^9.5.0",
+    "typescript": "^4.9.5",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "webpack-bundle-analyzer": "^4.7.0"
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx,js,jsx}": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ],
+    "src/**/*.{css,scss,less}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "standard-version": {
+    "types": [
+      {
+        "type": "feat",
+        "section": "新功能、新特性"
+      },
+      {
+        "type": "fix",
+        "section": "修改 bug"
+      },
+      {
+        "type": "perf",
+        "section": "更改代码，以提高性能（在不影响代码内部行为的前提下，对程序性能进行优化）"
+      },
+      {
+        "type": "refactor",
+        "section": "代码重构（重构，在不影响代码内部行为、功能下的代码修改）"
+      },
+      {
+        "type": "docs",
+        "section": "文档修改"
+      },
+      {
+        "type": "style",
+        "section": "代码格式修改, 注意不是 css 修改（例如分号修改）"
+      },
+      {
+        "type": "test",
+        "section": "测试用例新增、修改"
+      },
+      {
+        "type": "build",
+        "section": "影响项目构建或依赖项修改"
+      },
+      {
+        "type": "revert",
+        "section": "恢复上一次提交"
+      },
+      {
+        "type": "ci",
+        "section": "持续集成相关文件修改"
+      },
+      {
+        "type": "chore",
+        "section": "其他修改（不在上述类型中的修改）"
+      },
+      {
+        "type": "release",
+        "section": "发布新版本"
+      }
+    ]
+  }
+}
