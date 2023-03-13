@@ -1,15 +1,9 @@
 import React from 'react'
-import styled from '@emotion/styled'
-
-const Text = styled.p({
-  fontSize: 24,
-  color: 'tomato',
-})
 
 const Home: React.FC = () => {
   return (
     <div>
-      <Text>Home</Text>
+      <h1>Home page</h1>
     </div>
   )
 }
