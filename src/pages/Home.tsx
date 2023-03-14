@@ -1,9 +1,15 @@
 import React from 'react'
 
+import { template } from '@/api'
+
 const Home: React.FC = () => {
   return (
     <div>
-      <h1>Home page</h1>
+      <button onClick={() => template.fetchList().then(console.log)}>fetchList</button>
+      <button onClick={() => template.fetchTest().then(console.log)}>fetchTest</button>
+      <button onClick={() => template.fetchTodo().then(console.log).catch(console.log)}>
+        fetchTodo
+      </button>
     </div>
   )
 }

@@ -5,17 +5,11 @@ const { DefinePlugin } = require('webpack')
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 const { getPlugin, pluginByName, whenProd } = require('@craco/craco')
 const PrerendererWebpackPlugin = require('@prerenderer/webpack-plugin')
+const minimist = require('minimist')
 const prerenderRoutes = require('./prerenderRoutes')
 const pathResolve = (pathUrl) => path.join(__dirname, pathUrl)
 
-// analyzer
-const analyzer = process.argv.includes('--analyzer')
-
-// custom env
-const IS_DEV = process.argv.includes('--dev')
-const IS_SIT = process.argv.includes('--sit')
-const IS_SUPER = process.argv.includes('--super')
-const IS_PROD = process.argv.includes('--prod')
+const argv = minimist(process.argv.slice(2))
 
 /** @type {import('@craco/types').CracoConfig} */
 module.exports = {
@@ -28,14 +22,11 @@ module.exports = {
       add: [
         new ProgressBarPlugin(),
         new DefinePlugin({
-          IS_DEV,
-          IS_SIT,
-          IS_SUPER,
-          IS_PROD,
+          ENV: JSON.stringify(argv['env']),
         }),
       ]
         .concat(
-          analyzer
+          argv['analyzer']
             ? [
                 new BundleAnalyzerPlugin({
                   analyzerMode: 'server',
