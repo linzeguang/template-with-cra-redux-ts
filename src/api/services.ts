@@ -65,10 +65,16 @@ export class Services {
 
   // 生成每个请求唯一的键
   private generatePendingKey(config: InternalAxiosRequestConfig) {
+    console.log('config', config)
     const { method, url, params } = config
     let { data } = config
     if (typeof data === 'string') data = JSON.parse(data)
-    return [method, url, JSON.stringify(params), JSON.stringify(data)].join('&')
+
+    const keyStrs = [method, url]
+    params && keyStrs.push(JSON.stringify(params))
+    data && keyStrs.push(JSON.stringify(data))
+
+    return keyStrs.join('&')
   }
 
   private checkPending(config: InternalAxiosRequestConfig) {
@@ -78,6 +84,7 @@ export class Services {
   // 将请求添加进队列中
   private addPending(config: InternalAxiosRequestConfig) {
     const requestKey = this.generatePendingKey(config)
+    console.log('requestKey', requestKey)
     config.cancelToken =
       config.cancelToken ||
       new axios.CancelToken((cancel) => {
