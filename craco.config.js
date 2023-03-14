@@ -1,14 +1,21 @@
 const path = require('path')
 const ProgressBarPlugin = require('progress-bar-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const { DefinePlugin } = require('webpack')
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 const { getPlugin, pluginByName, whenProd } = require('@craco/craco')
 const PrerendererWebpackPlugin = require('@prerenderer/webpack-plugin')
-
 const prerenderRoutes = require('./prerenderRoutes')
-
 const pathResolve = (pathUrl) => path.join(__dirname, pathUrl)
+
+// analyzer
 const analyzer = process.argv.includes('--analyzer')
+
+// custom env
+const IS_DEV = process.argv.includes('--dev')
+const IS_SIT = process.argv.includes('--sit')
+const IS_SUPER = process.argv.includes('--super')
+const IS_PROD = process.argv.includes('--prod')
 
 /** @type {import('@craco/types').CracoConfig} */
 module.exports = {
@@ -18,7 +25,15 @@ module.exports = {
       '@': pathResolve('src'),
     },
     plugins: {
-      add: [new ProgressBarPlugin()]
+      add: [
+        new ProgressBarPlugin(),
+        new DefinePlugin({
+          IS_DEV,
+          IS_SIT,
+          IS_SUPER,
+          IS_PROD,
+        }),
+      ]
         .concat(
           analyzer
             ? [
