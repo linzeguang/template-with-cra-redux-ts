@@ -3,7 +3,7 @@
 # 获取当前提交的 commit msg
 commit_msg=`cat $1`
 
-msg_re="^(feat|fix|perf|refactor|docs|style|test|build|revert|ci|chore|release)(\(.+\))?:.{1,100}"
+msg_re="^(feat|fix|locale|ui|perf|refactor|docs|style|test|build|revert|ci|chore|release)(\(.+\))?:.{1,100}"
 
 echo ""
 echo "commit message: $commit_msg"
@@ -16,6 +16,8 @@ then
 	echo ""
 	echo "    feat:	新功能、新特性"
 	echo "     fix:	修改 bug"
+	echo "  locale:	为国际化做了微小的贡献"
+	echo "      ui: 修改了一下样式"
 	echo "    perf:	更改代码，以提高性能（在不影响代码内部行为的前提下，对程序性能进行优化）"
 	echo "refactor:	代码重构（重构，在不影响代码内部行为、功能下的代码修改）"
 	echo "    docs:	文档修改"
