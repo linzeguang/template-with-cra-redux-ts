@@ -10,6 +10,7 @@ import axios, {
 import { ENV_CONFIG } from '@/constants'
 
 import { IPromise } from './types'
+import { repeatUrl } from './url'
 
 export class Services {
   axios: AxiosInstance
@@ -32,15 +33,9 @@ export class Services {
   // 初始化请求拦截器
   private initRequestInterceptors() {
     this.axios.interceptors.request.use((config) => {
-      if (this.checkPending(config)) {
-        let cancelToken: Canceler | undefined
-        config.cancelToken = new axios.CancelToken((cancel) => {
-          cancelToken = cancel
-        })
-        cancelToken?.()
-      }
+      // 判断是否需要做重复请求处理
+      this.checkPending(config)
 
-      this.addPending(config)
       return config
     })
   }
@@ -63,9 +58,14 @@ export class Services {
     )
   }
 
+  // 校验是否需要处理重复请求
+  private checkAllowRepeat(config: InternalAxiosRequestConfig) {
+    const { url } = config
+    return !!url && repeatUrl.includes(url)
+  }
+
   // 生成每个请求唯一的键
   private generatePendingKey(config: InternalAxiosRequestConfig) {
-    console.log('config', config)
     const { method, url, params } = config
     let { data } = config
     if (typeof data === 'string') data = JSON.parse(data)
@@ -77,14 +77,23 @@ export class Services {
     return keyStrs.join('&')
   }
 
+  // 校验是否存在重复请求，使用节流模式处理请求，在接口未返回之前，后续重复请求都将做取消处理
   private checkPending(config: InternalAxiosRequestConfig) {
-    return this.pendingMap.has(this.generatePendingKey(config))
+    if (this.checkAllowRepeat(config)) return
+
+    const isPending = this.pendingMap.has(this.generatePendingKey(config))
+    if (!isPending) return this.addPending(config)
+
+    let cancelToken: Canceler | undefined
+    config.cancelToken = new axios.CancelToken((cancel) => {
+      cancelToken = cancel
+    })
+    cancelToken?.()
   }
 
   // 将请求添加进队列中
   private addPending(config: InternalAxiosRequestConfig) {
     const requestKey = this.generatePendingKey(config)
-    console.log('requestKey', requestKey)
     config.cancelToken =
       config.cancelToken ||
       new axios.CancelToken((cancel) => {
