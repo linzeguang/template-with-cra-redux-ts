@@ -1,24 +1,39 @@
 import React from 'react'
-import { Button } from '@mui/material'
+import { Button, styled } from '@mui/material'
 
-import { template } from '@/api'
+import { template } from '@/apis'
+
+const StyledButton = styled(Button)(({ theme }) => ({
+  [theme.mediaQueries.mobile]: {
+    fontSize: 14,
+  },
+  [theme.mediaQueries.tablet]: {
+    fontSize: 16,
+  },
+  [theme.mediaQueries.laptop]: {
+    fontSize: 18,
+  },
+  [theme.mediaQueries.desktop]: {
+    fontSize: 20,
+  },
+}))
 
 const Home: React.FC = () => {
   return (
     <div>
       <div>
-        <Button variant='contained' onClick={() => template.fetchList().then(console.log)}>
+        <StyledButton variant='contained' onClick={() => template.fetchList().then(console.log)}>
           fetchList
-        </Button>
-        <Button variant='contained' onClick={() => template.fetchTest().then(console.log)}>
+        </StyledButton>
+        <StyledButton variant='contained' onClick={() => template.fetchTest().then(console.log)}>
           fetchTest
-        </Button>
-        <Button
+        </StyledButton>
+        <StyledButton
           variant='contained'
           onClick={() => template.fetchTodo().then(console.log).catch(console.log)}
         >
           fetchTodo
-        </Button>
+        </StyledButton>
       </div>
     </div>
   )

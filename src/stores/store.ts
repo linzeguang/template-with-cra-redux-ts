@@ -18,7 +18,7 @@ const persistedReducer = persistReducer(
   reducers,
 )
 
-export const store = configureStore({
+const store = configureStore({
   reducer: persistedReducer,
   devTools: process.env.NODE_ENV !== 'production',
   middleware: (getDefaultMiddleware) =>
@@ -26,6 +26,8 @@ export const store = configureStore({
       serializableCheck: false,
     }),
 })
+
+export default store
 
 export type AppDispatch = typeof store.dispatch
 export type RootState = ReturnType<typeof store.getState>
