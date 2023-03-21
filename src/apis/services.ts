@@ -1,4 +1,4 @@
-import axios, {
+import type {
   AxiosError,
   AxiosInstance,
   AxiosRequestConfig,
@@ -6,10 +6,11 @@ import axios, {
   CreateAxiosDefaults,
   InternalAxiosRequestConfig,
 } from 'axios'
+import axios from 'axios'
 
 import { ENV_CONFIG } from '@/constants'
 
-import { IPromise } from './types'
+import type { IPromise } from './types'
 import { repeatUrl } from './url'
 
 export class Services {

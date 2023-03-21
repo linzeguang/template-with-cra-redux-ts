@@ -1,4 +1,4 @@
-import { BreakpointsOptions, ThemeOptions } from '@mui/material'
+import type { BreakpointsOptions, ThemeOptions } from '@mui/material'
 
 const values: BreakpointsOptions['values'] = {
   xs: 0,

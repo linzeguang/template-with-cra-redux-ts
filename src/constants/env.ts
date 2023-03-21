@@ -1,4 +1,4 @@
-import { EnvBase } from './types'
+import type { EnvBase } from './types'
 
 const baseApi = '/api'
 

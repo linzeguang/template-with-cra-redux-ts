@@ -1,6 +1,6 @@
 import { useMediaQuery, useTheme } from '@mui/material'
 
-export function useMediaQuerys() {
+export const useMediaQuerys = () => {
   const theme = useTheme()
   const isSmall = useMediaQuery(theme.mediaQueries.small)
   const isMobile = useMediaQuery(theme.mediaQueries.mobile)

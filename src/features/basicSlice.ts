@@ -1,6 +1,7 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import type { PayloadAction } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit'
 
-import { RootState } from '@/stores'
+import type { RootState } from '@/stores'
 
 export interface BasicState {
   theme: 'light' | 'dark'

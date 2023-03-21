@@ -2,6 +2,8 @@ import React from 'react'
 import { Button, styled } from '@mui/material'
 
 import { template } from '@/apis'
+import Modal, { useModal } from '@/components/Modal'
+import { Close } from '@/components/Svgr'
 
 const StyledButton = styled(Button)(({ theme }) => ({
   [theme.mediaQueries.mobile]: {
@@ -19,9 +21,22 @@ const StyledButton = styled(Button)(({ theme }) => ({
 }))
 
 const Home: React.FC = () => {
+  const [show] = useModal(
+    <Modal title='Cras mattis consectetur purus sit amet fermentum'>
+      {[...new Array(500)].map(() => [
+        `Cras mattis consectetur purus sit amet fermentum.`,
+        <br key='' />,
+      ])}
+    </Modal>,
+  )
+
   return (
     <div>
       <div>
+        <StyledButton onClick={show}>
+          modal test
+          <Close />
+        </StyledButton>
         <StyledButton variant='contained' onClick={() => template.fetchList().then(console.log)}>
           fetchList
         </StyledButton>

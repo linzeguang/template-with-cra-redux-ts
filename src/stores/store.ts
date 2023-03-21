@@ -1,6 +1,7 @@
 import { persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
-import { Action, combineReducers, configureStore, ThunkAction } from '@reduxjs/toolkit'
+import type { Action, ThunkAction } from '@reduxjs/toolkit'
+import { combineReducers, configureStore } from '@reduxjs/toolkit'
 
 import basicReducer from '@/features/basicSlice'
 import counterReducer from '@/features/counterSlice'

@@ -1,5 +1,5 @@
 import services from '../services'
-import { IList, IListParams } from '../types'
+import type { IList, IListParams } from '../types'
 
 interface ListData {
   id: number
