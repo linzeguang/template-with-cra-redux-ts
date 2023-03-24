@@ -8,8 +8,6 @@ import type {
 } from 'axios'
 import axios from 'axios'
 
-import { ENV_CONFIG } from '@/constants'
-
 import type { IPromise } from './types'
 import { repeatUrl } from './url'
 
@@ -19,7 +17,7 @@ export class Services {
 
   constructor(config?: CreateAxiosDefaults) {
     this.axios = axios.create({
-      baseURL: ENV_CONFIG.baseApi,
+      baseURL: process.env.REACT_APP_BASE_URL,
       timeout: 30 * 1000, // 超时时间：30s
       headers: {
         'Content-Type': 'application/json;charset=UTF-8',

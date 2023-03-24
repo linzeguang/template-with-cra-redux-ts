@@ -1,7 +1,6 @@
 const path = require('path')
 const ProgressBarPlugin = require('progress-bar-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
-const { DefinePlugin } = require('webpack')
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 const { getPlugin, pluginByName, whenProd } = require('@craco/craco')
 const PrerendererWebpackPlugin = require('@prerenderer/webpack-plugin')
@@ -19,12 +18,7 @@ module.exports = {
       '@': pathResolve('src'),
     },
     plugins: {
-      add: [
-        new ProgressBarPlugin(),
-        new DefinePlugin({
-          ENV: JSON.stringify(argv['env']),
-        }),
-      ]
+      add: [new ProgressBarPlugin()]
         .concat(
           argv['analyzer']
             ? [
