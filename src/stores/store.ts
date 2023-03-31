@@ -4,11 +4,9 @@ import type { Action, ThunkAction } from '@reduxjs/toolkit'
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 
 import basicReducer from '@/features/basicSlice'
-import counterReducer from '@/features/counterSlice'
 
 const reducers = combineReducers({
   basic: basicReducer,
-  counter: counterReducer,
 })
 
 const persistedReducer = persistReducer(
