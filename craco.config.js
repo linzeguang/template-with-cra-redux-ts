@@ -12,6 +12,9 @@ const argv = minimist(process.argv.slice(2))
 
 /** @type {import('@craco/types').CracoConfig} */
 module.exports = {
+  babel: {
+    plugins: ['@emotion/babel-plugin'],
+  },
   reactScriptsVersion: 'react-scripts',
   webpack: {
     alias: {
@@ -128,7 +131,7 @@ module.exports = {
       },
     },
     // 本地服务的端口号
-    port: 3000,
+    port: 2800,
     // 本地服务的响应头设置
     headers: {
       // 允许跨域
