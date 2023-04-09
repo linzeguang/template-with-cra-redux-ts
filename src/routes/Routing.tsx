@@ -1,18 +1,30 @@
 import React from 'react'
-import { Route, Routes } from 'react-router-dom'
+import { Navigate, useRoutes } from 'react-router-dom'
 
-const Home = React.lazy(() => import('@/pages/Home'))
-const About = React.lazy(() => import('@/pages/About'))
+import store from '@/stores/store'
+
+import { routes } from './routes'
+import type { IRoute } from './types'
+
+const renderRoutes = (routes: IRoute[]) => {
+  const { user } = store.getState()
+  const { isLogin } = user
+
+  return routes.map((route) => {
+    const { auth, redirect, children } = route
+
+    if (children) route.children = renderRoutes(children)
+
+    if (redirect) route.element = <Navigate to={redirect} />
+
+    if (auth && !isLogin) route.element = <Navigate to='/sign' replace />
+
+    return route
+  })
+}
 
 const Routing: React.FC = () => {
-  return (
-    <React.Suspense fallback={null}>
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/about' element={<About />} />
-      </Routes>
-    </React.Suspense>
-  )
+  return useRoutes(renderRoutes(routes))
 }
 
 export default Routing

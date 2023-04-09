@@ -3,6 +3,7 @@ import React, { Fragment } from 'react'
 import { Provider } from 'react-redux'
 import { persistStore } from 'redux-persist'
 import { PersistGate } from 'redux-persist/integration/react'
+import { ModalsProvider } from '@mantine/modals'
 
 import store from './stores'
 import ThemeProvider from './themes'
@@ -14,7 +15,9 @@ const Providers: React.FC<PropsWithChildren> = (props) => {
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <ThemeProvider>
-          <Fragment {...props} />
+          <ModalsProvider>
+            <Fragment {...props} />
+          </ModalsProvider>
         </ThemeProvider>
       </PersistGate>
     </Provider>

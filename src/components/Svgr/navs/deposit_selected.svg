@@ -1,0 +1,174 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30"
+  viewBox="0 0 30 30" fill="none">
+  <defs>
+    <linearGradient id="linear_0" x1="49.99999999999999%" y1="0%" x2="50%" y2="100%" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#FFEA4F" stop-opacity="1" />
+      <stop offset="1" stop-color="#E8A333" stop-opacity="1" />
+    </linearGradient>
+    <linearGradient id="linear_1" x1="49.99999999999999%" y1="0%" x2="50%" y2="100%" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#FFEA4F" stop-opacity="1" />
+      <stop offset="1" stop-color="#E8A333" stop-opacity="1" />
+    </linearGradient>
+    <linearGradient id="linear_2" x1="49.99999999999999%" y1="0%" x2="50%" y2="100%" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#FFEA4F" stop-opacity="1" />
+      <stop offset="1" stop-color="#E8A333" stop-opacity="1" />
+    </linearGradient>
+    <linearGradient id="linear_3" x1="49.99999999999999%" y1="0%" x2="50%" y2="100%" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#FFEA4F" stop-opacity="1" />
+      <stop offset="1" stop-color="#E8A333" stop-opacity="1" />
+    </linearGradient>
+    <linearGradient id="linear_4" x1="49.99999999999999%" y1="0%" x2="50%" y2="100%" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#FFEA4F" stop-opacity="1" />
+      <stop offset="1" stop-color="#E8A333" stop-opacity="1" />
+    </linearGradient>
+    <linearGradient id="linear_5" x1="49.99999999999999%" y1="0%" x2="50%" y2="100%" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#FFEA4F" stop-opacity="1" />
+      <stop offset="1" stop-color="#E8A333" stop-opacity="1" />
+    </linearGradient>
+    <linearGradient id="linear_6" x1="49.99999999999999%" y1="0%" x2="50%" y2="100%" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#FFEA4F" stop-opacity="1" />
+      <stop offset="1" stop-color="#E8A333" stop-opacity="1" />
+    </linearGradient>
+    <linearGradient id="linear_7" x1="49.99999999999999%" y1="0%" x2="50%" y2="100%" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#FFEA4F" stop-opacity="1" />
+      <stop offset="1" stop-color="#E8A333" stop-opacity="1" />
+    </linearGradient>
+    <linearGradient id="linear_8" x1="49.99999999999999%" y1="0%" x2="50%" y2="100%" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#FFEA4F" stop-opacity="1" />
+      <stop offset="1" stop-color="#E8A333" stop-opacity="1" />
+    </linearGradient>
+    <linearGradient id="linear_9" x1="49.99999999999999%" y1="0%" x2="50%" y2="100%" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#FFEA4F" stop-opacity="1" />
+      <stop offset="1" stop-color="#E8A333" stop-opacity="1" />
+    </linearGradient>
+    <linearGradient id="linear_10" x1="49.99999999999999%" y1="0%" x2="50%" y2="100%" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#FFEA4F" stop-opacity="1" />
+      <stop offset="1" stop-color="#E8A333" stop-opacity="1" />
+    </linearGradient>
+    <linearGradient id="linear_11" x1="49.99999999999999%" y1="0%" x2="50%" y2="100%" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#FFEA4F" stop-opacity="1" />
+      <stop offset="1" stop-color="#E8A333" stop-opacity="1" />
+    </linearGradient>
+    <linearGradient id="linear_12" x1="49.99999999999999%" y1="0%" x2="50%" y2="100%" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#FFEA4F" stop-opacity="1" />
+      <stop offset="1" stop-color="#E8A333" stop-opacity="1" />
+    </linearGradient>
+    <linearGradient id="linear_13" x1="49.99999999999999%" y1="0%" x2="50%" y2="100%" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#FFEA4F" stop-opacity="1" />
+      <stop offset="1" stop-color="#E8A333" stop-opacity="1" />
+    </linearGradient>
+    <linearGradient id="linear_14" x1="49.99999999999999%" y1="0%" x2="50%" y2="100%" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#FFEA4F" stop-opacity="1" />
+      <stop offset="1" stop-color="#E8A333" stop-opacity="1" />
+    </linearGradient>
+    <linearGradient id="linear_15" x1="49.99999999999999%" y1="0%" x2="50%" y2="100%" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#FFEA4F" stop-opacity="1" />
+      <stop offset="1" stop-color="#E8A333" stop-opacity="1" />
+    </linearGradient>
+    <linearGradient id="linear_16" x1="49.99999999999999%" y1="0%" x2="50%" y2="100%" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#FFEA4F" stop-opacity="1" />
+      <stop offset="1" stop-color="#E8A333" stop-opacity="1" />
+    </linearGradient>
+    <linearGradient id="linear_17" x1="49.99999999999999%" y1="0%" x2="50%" y2="100%" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#FFEA4F" stop-opacity="1" />
+      <stop offset="1" stop-color="#E8A333" stop-opacity="1" />
+    </linearGradient>
+    <linearGradient id="linear_18" x1="49.99999999999999%" y1="0%" x2="50%" y2="100%" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#FFEA4F" stop-opacity="1" />
+      <stop offset="1" stop-color="#E8A333" stop-opacity="1" />
+    </linearGradient>
+    <linearGradient id="linear_19" x1="49.99999999999999%" y1="0%" x2="50%" y2="100%" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#FFEA4F" stop-opacity="1" />
+      <stop offset="1" stop-color="#E8A333" stop-opacity="1" />
+    </linearGradient>
+    <linearGradient id="linear_20" x1="49.99999999999999%" y1="0%" x2="50%" y2="100%" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#FFEA4F" stop-opacity="1" />
+      <stop offset="1" stop-color="#E8A333" stop-opacity="1" />
+    </linearGradient>
+  </defs>
+  <g opacity="1" transform="translate(-0.0000028062163437425625 0.0000047778887051208585)  rotate(0 15 15)">
+    <g opacity="1" transform="translate(1.4235254915028293 1.5)  rotate(0 13.576474508497173 13.499999999999998)">
+      <path id="路径 1" fill-rule="evenodd" fill="url(#linear_0)"
+        transform="translate(10.396034655114958 0)  rotate(0 3.2074308563812073 1.500249916694435)" opacity="1"
+        d="M0.7,3C0.7,3 1.91,2.7 3.4,2.7C4.15,2.7 4.97,2.78 5.74,3L6.41,0.36C6.41,0.36 5.05,0 3.18,0C2.21,0 1.12,0.09 0,0.38L0.7,3Z " />
+      <path id="路径 2" fill-rule="evenodd" fill="url(#linear_1)"
+        transform="translate(0.5353215594801732 4.273575474841719)  rotate(0 2.568643785404865 3.1377040986337885)"
+        opacity="1" d="M2.61,6.28C2.61,6.28 3.4,3.59 5.14,1.9L3.18,0C3.18,0 0.91,2.32 0,5.57L2.61,6.28Z " />
+      <path id="路径 3" fill-rule="evenodd" fill="url(#linear_2)"
+        transform="translate(0.5308230589803397 17.323725424858385)  rotate(0 0.22492502499166944 0.6207930689770073)"
+        opacity="1" d="M0.45,1.24C0.29,0.84 0.14,0.42 0.02,0L0,0L0,0C0,0 0.14,0.5 0.45,1.24Z " />
+      <path id="路径 4" fill-rule="evenodd" fill="url(#linear_3)"
+        transform="translate(2.9015328223925354 21.885204931689437)  rotate(0 0.033738753748750495 0.042735754748416684)"
+        opacity="1" d="M0,0C0.02,0.03 0.04,0.06 0.07,0.09C0.04,0.05 0.02,0.03 0,0Z " />
+      <path id="路径 5" fill-rule="evenodd" fill="url(#linear_4)"
+        transform="translate(3.2929023658780405 22.35754748417194)  rotate(0 0.03148950349883364 0.03823725424858418)"
+        opacity="1" d="M0,0C0.02,0.03 0.04,0.05 0.06,0.08C0.04,0.05 0.02,0.03 0,0Z " />
+      <path id="路径 6" fill-rule="evenodd" fill="url(#linear_5)"
+        transform="translate(0.548817060979673 16.581472842385875)  rotate(0 2.566394535154948 3.142202599133621)"
+        opacity="1"
+        d="M5.13,4.37C5.13,4.37 3.19,2.35 2.6,0L0,0.74C0.13,1.16 0.27,1.57 0.43,1.98C0.8,2.87 1.42,4.1 2.36,5.3C2.38,5.33 2.4,5.36 2.42,5.39C2.53,5.52 2.64,5.65 2.75,5.78C2.77,5.8 2.79,5.83 2.81,5.85C2.94,6 3.07,6.14 3.21,6.28L5.13,4.37L5.13,4.37Z " />
+      <path id="路径 7" fill-rule="evenodd" fill="url(#linear_6)"
+        transform="translate(0.9806731089636787 18.565311562812397)  rotate(0 0.9626791069643452 1.662195934688437)"
+        opacity="1" d="M0,0C0.49,1.2 1.13,2.32 1.93,3.32C0.99,2.13 0.37,0.89 0,0Z " />
+      <path id="路径 8" fill-rule="evenodd" fill="url(#linear_7)"
+        transform="translate(2.969010329890036 21.97067644118627)  rotate(0 0.1619460179940019 0.19343552149283558)"
+        opacity="1" d="M0,0C0.1,0.13 0.21,0.26 0.32,0.39C0.21,0.26 0.1,0.13 0,0Z " />
+      <path id="路径 9" fill-rule="evenodd" fill="url(#linear_8)"
+        transform="translate(10.39153615461513 23.999500166611124)  rotate(0 3.2074308563812046 1.5002499166944356)"
+        opacity="1"
+        d="M5.72,0C5.72,0 4.51,0.3 3.01,0.3C2.27,0.3 1.45,0.22 0.67,0L0,2.65C0,2.65 1.37,3 3.24,3C4.2,3 5.3,2.91 6.41,2.62L5.72,0Z " />
+      <path id="路径 10" fill-rule="evenodd" style="fill:#FF812C"
+        transform="translate(25.708930356547818 19.50099966677774)  rotate(0 0.029240253248917606 0.053982005998001105)"
+        opacity="1" d="M0,0.11C0.02,0.07 0.04,0.04 0.06,0C0.04,0.04 0.02,0.07 0,0.11Z " />
+      <path id="路径 11" fill-rule="evenodd" fill="url(#linear_9)"
+        transform="translate(23.428190603132286 21.65578140619793)  rotate(0 0.5060813062312562 0.602799066977674)"
+        opacity="1"
+        d="M1.01 0C0.91 0.13 0.82 0.25 0.73 0.36C0.5 0.65 0.26 0.93 0 1.19L0.01 1.21C0.01 1.21 0.31 0.9 0.73 0.36C0.83 0.24 0.92 0.13 1.01 0Z" />
+      <path id="路径 12" fill-rule="evenodd" style="fill:#FF812C"
+        transform="translate(25.888870376541153 17.29673442185938)  rotate(0 0.37112629123625424 0.9784238587137624)"
+        opacity="1" d="M0.74,0C0.54,0.67 0.3,1.33 0,1.96C0.29,1.36 0.55,0.7 0.74,0L0.74,0Z " />
+      <path id="路径 13" fill-rule="evenodd" fill="url(#linear_10)"
+        transform="translate(21.493835388203934 16.590469843385534)  rotate(0 2.5663945351549473 3.1309563478840388)"
+        opacity="1"
+        d="M4.22,3.03L4.22,3.02C4.24,2.98 4.26,2.95 4.28,2.91C4.32,2.83 4.36,2.74 4.4,2.66C4.69,2.04 4.93,1.38 5.13,0.71L2.52,0C2.52,0 1.74,2.69 0,4.37L1.94,6.26C2.3,5.88 2.64,5.49 2.95,5.07C3.35,4.54 3.8,3.84 4.22,3.03Z " />
+      <path id="路径 14" fill-rule="evenodd" style="fill:#FF812C"
+        transform="translate(25.771909363545483 19.2535821392869)  rotate(0 0.05848050649783361 0.12370876374541753)"
+        opacity="1" d="M0,0.25C0.04,0.17 0.08,0.08 0.12,0C0.08,0.08 0.04,0.17 0,0.25Z " />
+      <path id="路径 15" fill-rule="evenodd" fill="url(#linear_11)"
+        transform="translate(24.4403532155948 19.608963678773744)  rotate(0 0.6365378207264242 1.0234088637120953)"
+        opacity="1" d="M0,2.05C0.48,1.41 0.91,0.72 1.27,0C0.85,0.81 0.4,1.51 0,2.05Z " />
+      <path id="路径 16" fill-rule="evenodd" fill="url(#linear_12)"
+        transform="translate(23.80606464511829 4.561479506831055)  rotate(0 0.03148950349883386 0.03598800399866714)"
+        opacity="1" d="M0.06,0.07C0.04,0.05 0.02,0.02 0,0C0.02,0.02 0.04,0.05 0.06,0.07Z " />
+      <path id="路径 17" fill-rule="evenodd" fill="url(#linear_13)"
+        transform="translate(24.197434188603797 5.024825058313895)  rotate(0 0.03148950349883386 0.04048650449850044)"
+        opacity="1" d="M0.06,0.08C0.04,0.05 0.02,0.03 0,0C0.02,0.03 0.04,0.05 0.06,0.08Z " />
+      <path id="路径 18" fill-rule="evenodd" style="fill:#FF812C"
+        transform="translate(26.185771409530158 8.434688437187603)  rotate(0 0.22492502499166944 0.6207930689770073)"
+        opacity="1" d="M0,0C0.16,0.4 0.31,0.82 0.43,1.24L0.45,1.24L0.45,1.24C0.45,1.24 0.31,0.74 0,0Z " />
+      <path id="路径 19" fill-rule="evenodd" fill="url(#linear_14)"
+        transform="translate(21.48483838720426 4.134121959346884)  rotate(0 2.564145284905033 3.1399533488837044)"
+        opacity="1"
+        d="M2.77 0.98C2.75 0.95 2.73 0.92 2.71 0.9C2.6 0.76 2.5 0.63 2.38 0.5C2.36 0.48 2.34 0.45 2.32 0.43C2.19 0.29 2.06 0.14 1.92 0L0 1.91C0.08 1.99 1.95 3.98 2.52 6.28L5.13 5.54C5 5.12 4.86 4.71 4.7 4.3C4.33 3.41 3.71 2.17 2.77 0.98Z" />
+      <path id="路径 20" fill-rule="evenodd" fill="url(#linear_15)"
+        transform="translate(23.873542152615794 4.637954015328223)  rotate(0 0.16194601799400177 0.19568477174275223)"
+        opacity="1" d="M0.32,0.39C0.22,0.26 0.11,0.13 0,0C0.11,0.13 0.22,0.26 0.32,0.39Z " />
+      <path id="分组 1" fill-rule="evenodd" fill="url(#linear_16)"
+        transform="translate(0 0.6747750749750089)  rotate(0 13.576474508497173 12.822975674775071)" opacity="1"
+        d="M7.62 5.5L6.62 6.47C5.16 7.87 4.46 10.23 4.45 10.25L4.08 11.52L2.81 11.17L0.21 10.48C0.07 11.24 0 12.02 0 12.82C0 13.68 0.08 14.52 0.23 15.33L2.79 14.61L4.13 14.23L4.47 15.58C4.96 17.54 6.64 19.33 6.66 19.35L7.57 20.31L6.63 21.24L4.73 23.13C6 24.22 7.47 25.08 9.08 25.65L9.08 25.64L9.75 22.99L10.09 21.64L11.43 22.02C12 22.19 12.66 22.27 13.4 22.27C14.69 22.27 15.76 22.02 15.79 22.01L17.07 21.7L17.4 22.97L18.1 25.59L18.11 25.62C19.72 25.06 21.18 24.19 22.44 23.1L20.54 21.25L19.54 20.28L20.54 19.31C21.99 17.91 22.7 15.56 22.71 15.53L23.08 14.26L24.35 14.61L26.92 15.3C27.07 14.5 27.15 13.67 27.15 12.82C27.15 11.97 27.07 11.13 26.92 10.32L24.38 11.03L23.04 11.41L22.7 10.06C22.21 8.11 20.53 6.32 20.51 6.3L19.6 5.34L20.54 4.4L22.43 2.51C21.17 1.43 19.72 0.58 18.12 0.01L17.45 2.65L17.11 3.99L15.77 3.61C15.2 3.45 14.54 3.37 13.8 3.37C12.5 3.37 11.43 3.63 11.42 3.63L10.13 3.94L9.79 2.66L9.1 0.04L9.08 0C7.43 0.58 5.92 1.47 4.64 2.6L4.66 2.63L6.62 4.53L7.62 5.5Z M26.93 10.32L26.92 10.31C26.92 10.31 26.92 10.32 26.92 10.32L26.93 10.32Z M13.5833 21.4131C13.5833 21.4131 13.5833 21.4131 13.5833 21.4131L13.5833 21.4131C13.5833 21.4131 13.5833 21.4131 13.5833 21.4131Z M22.1733 12.8231C22.1733 8.09309 18.3133 4.23309 13.5833 4.23309C8.84334 4.23309 4.99334 8.09309 4.99334 12.8231C4.99334 17.5631 8.84334 21.4131 13.5833 21.4131C18.3233 21.4131 22.1733 17.5631 22.1733 12.8231Z " />
+      <path id="路径 23" fill-rule="evenodd" fill="url(#linear_17)"
+        transform="translate(13.275074975008332 14.300733088970341)  rotate(0 0.7107630789736755 0.3283905364878375)"
+        opacity="1" d="M0.4,0.66C0.69,0.66 0.91,0.62 1.07,0.53C1.23,0.45 1.35,0.27 1.42,0L0,0L0,0.66L0.4,0.66Z " />
+      <path id="路径 24" fill-rule="evenodd" fill="url(#linear_18)"
+        transform="translate(13.275074975008332 12.465344885038318)  rotate(0 0.7624958347217587 0.3778740419860046)"
+        opacity="1" d="M0,0.76L1.52,0.76L1.52,0.28C1.52,0.19 1.52,0.09 1.51,0L0,0L0,0.76Z " />
+      <path id="路径 25" fill-rule="evenodd" fill="url(#linear_19)"
+        transform="translate(13.275074975008328 10.737920693102296)  rotate(0 0.6860213262245911 0.3283905364878375)"
+        opacity="1" d="M0.33,0L0,0L0,0.66L1.37,0.66C1.3,0.4 1.18,0.22 1.01,0.13L1.02,0.13C0.85,0.04 0.63,0 0.33,0Z " />
+      <path id="分组 2" fill-rule="evenodd" fill="url(#linear_20)"
+        transform="translate(6.518327224258581 6.437354215261579)  rotate(0 7.062645784738419 7.062645784738418)"
+        opacity="1"
+        d="M0 7.06C0 10.96 3.17 14.13 7.06 14.13C10.96 14.13 14.13 10.96 14.13 7.06C14.13 3.17 10.96 0 7.06 0C3.17 0 0 3.17 0 7.06Z M10.2162 4.96108C10.0562 4.16108 9.73616 3.59108 9.25616 3.26108C8.77616 2.93108 8.09616 2.77108 7.21616 2.77108L4.73616 2.77108L4.73616 4.96108L4.02616 4.96108L4.02616 6.03108L4.73616 6.03108L4.73616 6.79108L4.02616 6.79108L4.02616 7.87108L4.73616 7.87108L4.73616 11.5111L6.76616 11.5111L6.76616 10.0411L7.21616 10.0411C7.64616 10.0411 8.02616 10.0011 8.36616 9.93108C8.70616 9.86108 9.00616 9.73108 9.25616 9.57108C9.50616 9.40108 9.71616 9.18108 9.87616 8.90108C10.0462 8.62108 10.1662 8.28108 10.2362 7.87108L11.1862 7.87108L11.1862 6.78108L10.3362 6.78108L10.3362 6.30108C10.3362 6.21108 10.3362 6.12108 10.3262 6.03108L11.1762 6.03108L11.1862 6.03108L11.1862 4.96108L10.2162 4.96108Z " />
+    </g>
+  </g>
+</svg>

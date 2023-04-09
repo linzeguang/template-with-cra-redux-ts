@@ -3,10 +3,10 @@ import storage from 'redux-persist/lib/storage'
 import type { Action, ThunkAction } from '@reduxjs/toolkit'
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 
-import basicReducer from '@/features/basicSlice'
+import userSlice from '@/features/userSlice'
 
 const reducers = combineReducers({
-  basic: basicReducer,
+  user: userSlice,
 })
 
 const persistedReducer = persistReducer(

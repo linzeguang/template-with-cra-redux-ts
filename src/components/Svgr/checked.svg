@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="12"
+  viewBox="0 0 12 12" fill="none">
+  <defs>
+    <linearGradient id="linear_0" x1="0%" y1="0%" x2="100%" y2="100%" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#FFEB3B" stop-opacity="1" />
+      <stop offset="0.4862" stop-color="#FFEB3B" stop-opacity="0.12" />
+      <stop offset="1" stop-color="#FFEB3B" stop-opacity="0.5" />
+    </linearGradient>
+  </defs>
+  <g opacity="1" transform="translate(0.25 0.25)  rotate(0 5.5 5.5)">
+    <g opacity="1" transform="translate(0 0)  rotate(0 5.5 5.5)">
+      <path id="矩形 2" fill-rule="evenodd" style="fill:#261D00" transform="translate(0 0)  rotate(0 5.5 5.5)" opacity="1"
+        d="M2,11L9,11C10.1,11 11,10.1 11,9L11,2C11,0.9 10.1,0 9,0L2,0C0.9,0 0,0.9 0,2L0,9C0,10.1 0.9,11 2,11Z " />
+      <rect id="矩形 2" style="stroke:url(#linear_0); stroke-width:0.5; stroke-opacity:100; stroke-dasharray:0 0"
+        transform="translate(0 0)  rotate(0 5.5 5.5)" x="0.25" y="0.25" rx="1.75" width="11" height="10.5" />
+      <path id="矩形 2" fill-rule="evenodd" style="fill:#FFC300" transform="translate(3 3)  rotate(0 2.5 2.5)" opacity="1"
+        d="M1,5L4,5C4.55,5 5,4.55 5,4L5,1C5,0.45 4.55,0 4,0L1,0C0.45,0 0,0.45 0,1L0,4C0,4.55 0.45,5 1,5Z " />
+    </g>
+  </g>
+</svg>

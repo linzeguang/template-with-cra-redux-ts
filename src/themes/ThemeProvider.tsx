@@ -3,29 +3,25 @@ import React from 'react'
 import type { MantineProviderProps, MantineThemeOverride } from '@mantine/core'
 import { MantineProvider } from '@mantine/core'
 
+import components from './components'
+import globalStyles from './globalStyles'
+
 export const theme: MantineThemeOverride = {
   colorScheme: 'dark',
   colors: {
     dark: ['#fff', '', '', '', '', '', '', '#000', '', ''],
-    gold: ['', '', '', '', '', '#D6A400', '', '', '#FFEDC7', '#3D2F00'],
-  },
-  components: {
-    Button: {
-      variants: {
-        outline: (theme) => ({
-          root: {
-            color: theme.colors.gold[8],
-            background: theme.colors.gold[9],
-          },
-        }),
-      },
-    },
+    gold: ['', '', '', '', '#B58B00', '#D6A400', '', '', '#FFEDC7', '#3D2F00'],
   },
   white: '#fff',
   black: '#000',
   primaryColor: 'gold',
   lineHeight: 1.5,
-  breakpoints: {},
+  activeStyles: {
+    transform: 'none',
+    backgroundSize: 'auto',
+  },
+  globalStyles,
+  components,
 }
 
 const ThemeProvider: React.FC<PropsWithChildren<MantineProviderProps>> = ({ children }) => {

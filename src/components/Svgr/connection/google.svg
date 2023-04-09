@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40"
+  viewBox="0 0 40 40" fill="none">
+  <g opacity="1" transform="translate(0.00001708984370907274 0)  rotate(0 19.55598086137854 19.55598086137854)">
+    <path id="路径 1" fill-rule="evenodd" style="fill:#EB422E"
+      transform="translate(0 0)  rotate(0 19.55598086137854 19.55598086137854)" opacity="1"
+      d="M19.56,0C8.76,0 0,8.76 0,19.56C0,30.36 8.76,39.11 19.56,39.11C30.36,39.11 39.11,30.36 39.11,19.56C39.11,8.76 30.36,0 19.56,0Z " />
+    <path id="路径 2" style="stroke:#FFFFFF; stroke-width:3.8960687499999995; stroke-opacity:1; stroke-dasharray:0 0"
+      transform="translate(7.545483659053361 7.545483659053361)  rotate(0 12.010497202325178 12.010497202325178)"
+      d="M12.01,12.01L24.02,12.01C24.02,18.6 18.6,24.02 12.01,24.02C5.42,24.02 0,18.6 0,12.01C0,5.42 5.42,0 12.01,0C14.46,0 16.84,0.75 18.86,2.14 " />
+  </g>
+</svg>
