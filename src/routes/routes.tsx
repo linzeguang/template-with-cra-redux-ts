@@ -38,7 +38,7 @@ export const routes: IRoute[] = [
         element: <About />,
         name: i18n.t('settings.securityCenter'),
         showHeader,
-        // auth,
+        auth,
       },
     ],
   },

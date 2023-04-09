@@ -3,9 +3,7 @@ const ProgressBarPlugin = require('progress-bar-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 const { getPlugin, pluginByName, whenProd } = require('@craco/craco')
-const PrerendererWebpackPlugin = require('@prerenderer/webpack-plugin')
 const minimist = require('minimist')
-const prerenderRoutes = require('./prerenderRoutes')
 const pathResolve = (pathUrl) => path.join(__dirname, pathUrl)
 
 const argv = minimist(process.argv.slice(2))
@@ -53,14 +51,6 @@ module.exports = {
                     // 移除debugger
                     drop_debugger: true,
                   },
-                },
-              }),
-              new PrerendererWebpackPlugin({
-                routes: prerenderRoutes,
-                rendererOptions: {
-                  headless: false,
-                  renderAfterTime: 3000,
-                  timeout: 5000,
                 },
               }),
             ],
@@ -126,8 +116,13 @@ module.exports = {
   devServer: {
     proxy: {
       '/api': {
-        target: 'https://test.buckydrop.com',
+        target: 'http://api.bbwwj.net',
+        // target: 'http://192.168.2.32:9001',
+        // target: 'http://192.168.2.5:9005',
         changeOrigin: true,
+        pathRewrite: {
+          '^/api': '',
+        },
       },
     },
     // 本地服务的端口号

@@ -24,7 +24,7 @@ const Layout: React.FC<React.PropsWithChildren> = ({ children }) => {
 
   const { showHeader = false, showNavs = false, name } = useMemo(() => route || {}, [route])
 
-  console.log('>>>>>> rightNode: ', rightNode)
+  console.log('>>>>>> showNavs: ', showNavs)
 
   return (
     <LayoutContext.Provider
