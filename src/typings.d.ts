@@ -15,4 +15,15 @@ declare module '@mantine/core' {
   export interface MantineThemeColorsOverride {
     colors: Record<ExtendedCustomColors, Tuple<string, 10>>
   }
+
+  interface MantineThemeOther {
+    headerHeight: number | string
+    navHeight: number | string
+    pageSpacing: number | string
+    zIndex: {
+      loading: number
+      header: number
+      footer: number
+    }
+  }
 }

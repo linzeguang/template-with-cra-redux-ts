@@ -6,6 +6,10 @@ const globalStyles: MantineThemeOverride['globalStyles'] = (theme) => ({
     background: 'none',
     border: 'none',
   },
+  a: {
+    textDecoration: 'none',
+    color: 'inherit',
+  },
 })
 
 export default globalStyles

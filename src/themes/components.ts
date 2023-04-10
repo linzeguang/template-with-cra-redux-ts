@@ -2,20 +2,21 @@ import { type MantineThemeOverride, rem } from '@mantine/core'
 
 const components: MantineThemeOverride['components'] = {
   Button: {
-    defaultProps: {
-      gradient: { from: '#fef924', to: '#522d00', deg: 180 },
-    },
     variants: {
       outline: (theme) => ({
         root: {
           color: theme.colors.gold[8],
-          background: theme.colors.gold[9],
+          backgroundColor: theme.colors.dark[5],
+          ...theme.fn.hover({
+            backgroundColor: theme.fn.rgba(theme.colors.dark[6], 0.9),
+          }),
         },
       }),
       gradient: (theme) => ({
         root: {
           padding: 1,
           color: theme.colors.dark[7],
+          ...theme.fn.hover({ backgroundSize: 'auto' }),
         },
         inner: {
           width: '100%',
@@ -23,12 +24,12 @@ const components: MantineThemeOverride['components'] = {
         },
       }),
     },
-    styles: {
+    styles: (theme) => ({
       root: {
         borderRadius: '0.5rem',
-        transition: '50ms',
+        transition: '100ms',
       },
-    },
+    }),
   },
   Drawer: {
     styles: (theme) => ({

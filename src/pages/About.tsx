@@ -16,7 +16,7 @@ const About: React.FC = () => {
   }, [setRightNode])
 
   return (
-    <div style={{ padding: '0 15px' }}>
+    <div>
       <h1 onClick={openModal}>About page</h1>
       <Stack>
         <Loading visible />
@@ -25,7 +25,7 @@ const About: React.FC = () => {
         <br />
         <br />
       </Stack>
-      <StepButton loading>next</StepButton>
+      <StepButton>next</StepButton>
     </div>
   )
 }

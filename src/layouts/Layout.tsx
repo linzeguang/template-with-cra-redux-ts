@@ -3,6 +3,8 @@ import React, { createContext, useMemo, useState } from 'react'
 import { useRoute } from '@/routes'
 
 import Header from './Header'
+import Main from './Main'
+import Navs from './Navs'
 
 interface Context {
   setLeftNode: React.Dispatch<React.SetStateAction<React.ReactNode>>
@@ -24,8 +26,6 @@ const Layout: React.FC<React.PropsWithChildren> = ({ children }) => {
 
   const { showHeader = false, showNavs = false, name } = useMemo(() => route || {}, [route])
 
-  console.log('>>>>>> showNavs: ', showNavs)
-
   return (
     <LayoutContext.Provider
       value={{
@@ -35,7 +35,10 @@ const Layout: React.FC<React.PropsWithChildren> = ({ children }) => {
       }}
     >
       <Header visible={showHeader} title={name} {...{ leftNode, centerNode, rightNode }} />
-      {children}
+      <Main showHeader={showHeader} showNavs={showNavs}>
+        {children}
+      </Main>
+      <Navs visible={showNavs} />
     </LayoutContext.Provider>
   )
 }
