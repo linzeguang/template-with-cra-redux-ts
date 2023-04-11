@@ -14,13 +14,13 @@ import { userModel } from '@/models'
 const basePath = '/settings/security-center'
 
 const SecurityCenter: React.FC<TranslationType & RouterType> = ({ t, navigate }) => {
-  const { userInfo } = useModel(userModel)
+  const { memberInfo } = useModel(userModel)
 
   const list = useMemo<SettingsItemProps[]>(
     () => [
       {
         name: t('settings.mobileNumber'),
-        value: userInfo?.telephone,
+        value: memberInfo?.telephone,
         onClick: () => navigate(basePath + '/mobile'),
       },
       {
@@ -28,7 +28,7 @@ const SecurityCenter: React.FC<TranslationType & RouterType> = ({ t, navigate })
         onClick: () => navigate(basePath + '/password?type=change'),
       },
     ],
-    [navigate, t, userInfo?.telephone],
+    [navigate, t, memberInfo?.telephone],
   )
   return (
     <PageMain>

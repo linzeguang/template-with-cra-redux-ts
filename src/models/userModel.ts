@@ -1,36 +1,36 @@
 import { defineModel } from 'foca'
 
-import type { UserInfo, Wallet } from '@/apis'
-import { game, user } from '@/apis'
+import type { MemberInfo } from '@/apis'
+import { memberInterface, walletInterface } from '@/apis'
 
 export interface UserState {
   isLogin: boolean
   signArgeement: boolean
   token?: string
-  userInfo?: UserInfo
-  walletInfo?: Wallet
+  memberInfo?: MemberInfo
+  balance?: number
 }
 
 const initialState: UserState = {
   isLogin: false,
   signArgeement: false,
   token: undefined,
-  userInfo: undefined,
-  walletInfo: undefined,
+  memberInfo: undefined,
+  balance: undefined,
 }
 
 export const userModel = defineModel('user', {
   initialState,
   reducers: {
-    updateUserInfo(state, userInfo: UserState['userInfo']) {
-      if (!userInfo) return
+    updateMemberInfo(state, memberInfo: UserState['memberInfo']) {
+      if (!memberInfo) return
       state.isLogin = true
       state.signArgeement = true
-      state.userInfo = userInfo
-      if (userInfo.token) state.token = userInfo.token
+      state.memberInfo = memberInfo
+      if (memberInfo.token) state.token = memberInfo.token
     },
-    updateWalletInfo(state, walletInfo: UserState['walletInfo']) {
-      state.walletInfo = walletInfo
+    updateBalance(state, balance: UserState['balance']) {
+      state.balance = balance
     },
     clear(state) {
       return {
@@ -41,17 +41,17 @@ export const userModel = defineModel('user', {
   },
   methods: {
     async fetchUserInfo() {
-      const { data, isSuccess } = await user.customerInfo()
+      const { data, isSuccess } = await memberInterface.memberInfo()
       if (isSuccess && data) {
-        this.updateUserInfo(data)
+        this.updateMemberInfo(data)
       } else {
         this.clear()
       }
     },
     async fetchWalletInfo() {
-      await game.withdraw()
-      const { data, isSuccess } = await user.walletInfo()
-      isSuccess && data && this.updateWalletInfo(data)
+      await memberInterface.withdraw()
+      const { data, isSuccess } = await walletInterface.walletBalance()
+      isSuccess && this.updateBalance(data || 0)
     },
   },
   events: {

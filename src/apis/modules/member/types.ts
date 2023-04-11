@@ -1,48 +1,38 @@
-/**
- * @Author linzeguang
- * @Date 2023-04-03 14:31:20
- * @LastEditTime 2023-04-07 18:03:12
- * @LastEditors linzeguang
- * @Description
- */
-
 import type { Enum } from '@/constants'
 
-export interface BannerInfo {
-  activeId: number
-  link: string
-  linkType: number
-  pic: string
+export interface MemberInfo {
+  account: string
+  avatar: string
+  customerId: string
+  expire: string
+  token?: string
+  telephone: string
 }
 
-// 游戏类型
-export interface GameType {
-  id: number
-  logo: string
-  name: string
-  pid: number
-  type: string
-  childrens?: GamePlatform[]
+export interface ModifyPwdParams {
+  newPassword: string
+  password: string
 }
 
-// 游戏平台
-export interface GamePlatform {
-  id: number
-  logo: string
-  name: string
-  pid: number
-  type?: string
-  childrens?: GameInfo[]
+export interface TelephoneParams {
+  telephone: string
 }
 
-// 游戏信息
-export interface GameInfo {
-  hot?: 0 | 1
-  id: number
-  logo: string
-  name: string
-  pid?: number
+export interface SmsCodeParams {
+  smsCode: string
 }
+
+export interface CheckSmsParams extends TelephoneParams, SmsCodeParams {}
+
+export interface CheckTelParams extends TelephoneParams {
+  newTelephone: string
+}
+
+export interface FindPwdParams extends TelephoneParams, SmsCodeParams {
+  newPassword: string
+}
+
+export interface ModifyTelParams extends CheckTelParams, SmsCodeParams {}
 
 export interface BetRecordParams {
   betStatus?: string

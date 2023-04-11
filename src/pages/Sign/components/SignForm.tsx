@@ -7,7 +7,7 @@ import { Button, createPolymorphicComponent, rem, Space, Text } from '@mantine/c
 import { useForm } from '@mantine/form'
 import { useDisclosure, useScrollIntoView } from '@mantine/hooks'
 
-import { user } from '@/apis'
+import { signInterface } from '@/apis'
 import { signImages } from '@/assets/images'
 import type { RouterType, TranslationType } from '@/components/HOC'
 import { WithRouter, WithTranslation } from '@/components/HOC'
@@ -119,10 +119,14 @@ const SignForm: React.FC<TranslationType & RouterType> = ({ t, navigate }) => {
 
       try {
         const { data, isSuccess, message } = await (signType === 'login'
-          ? user.loginByAccount({ account: username, password })
-          : user.registerByAccount({ account: username, password, telephone: telephone || '' }))
+          ? signInterface.loginByAccount({ account: username, password })
+          : signInterface.registerByAccount({
+              account: username,
+              password,
+              telephone: telephone || '',
+            }))
         if (!isSuccess) throw message
-        userModel.updateUserInfo(data)
+        userModel.updateMemberInfo(data)
         navigate('/', { replace: true })
       } catch (error) {
         loadingHandlers.close()
