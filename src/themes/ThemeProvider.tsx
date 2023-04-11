@@ -1,7 +1,7 @@
 import type { PropsWithChildren } from 'react'
 import React from 'react'
 import type { MantineProviderProps, MantineThemeOverride } from '@mantine/core'
-import { MantineProvider } from '@mantine/core'
+import { MantineProvider, rem } from '@mantine/core'
 
 import components from './components'
 import globalStyles from './globalStyles'
@@ -9,7 +9,7 @@ import globalStyles from './globalStyles'
 export const theme: MantineThemeOverride = {
   colorScheme: 'dark',
   colors: {
-    dark: ['#fff', '', '', '', '', '#3D2F00', '#261D00', '#000', '', ''],
+    dark: ['#D6A400', '', '', '', '', '#3D2F00', '#261D00', '#000', '', ''],
     gold: ['', '', '', '', '#B58B00', '#D6A400', '#BDAE2A', '#FFEB3B', '#FFEDC7', ''],
   },
   white: '#fff',
@@ -18,11 +18,11 @@ export const theme: MantineThemeOverride = {
   globalStyles,
   lineHeight: 1.5,
   activeStyles: { transform: 'scale(0.98)', backgroundSize: 'auto' },
-  defaultGradient: { from: '#fef924', to: '#522d00', deg: 180 },
+  defaultGradient: { from: '#FFEA4F', to: '#BF8322', deg: 180 },
   components,
   other: {
-    headerHeight: '50px',
-    navHeight: '64px',
+    headerHeight: rem(50),
+    navHeight: rem(64),
     pageSpacing: '1rem',
     zIndex: {
       loading: 50,

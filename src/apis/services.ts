@@ -8,6 +8,8 @@ import type {
 } from 'axios'
 import axios from 'axios'
 
+import store from '@/stores/store'
+
 import type { IPromise } from './types'
 import { repeatUrl } from './url'
 
@@ -34,6 +36,9 @@ export class Services {
     this.axios.interceptors.request.use((config) => {
       // 判断是否需要做重复请求处理
       this.checkPending(config)
+      const { user } = store.getState()
+      const { token } = user
+      if (token) config.headers.set({ token: 'Bearer ' + token })
 
       return config
     })
@@ -46,13 +51,14 @@ export class Services {
         const { data, config } = response
         this.removePending(config)
 
+        // if (data.code === '401') history.push(SignPath)
         return data
       },
       (error: AxiosError) => {
         const { config } = error
         config && this.removePending(config)
 
-        return Promise.reject(error)
+        return Promise.reject(error.message)
       },
     )
   }
@@ -115,15 +121,23 @@ export class Services {
     }
   }
 
-  public get<D = unknown, P = unknown>(url: string, params?: P, config?: AxiosRequestConfig<P>) {
-    return this.axios.get<D, IPromise<D>, P>(url, {
+  public get<D = unknown, P = unknown, L = unknown>(
+    url: string,
+    params?: P,
+    config?: AxiosRequestConfig<P>,
+  ) {
+    return this.axios.get<D, IPromise<D, L>, P>(url, {
       params,
       ...config,
     })
   }
 
-  public post<D = unknown, P = unknown>(url: string, data?: P, config?: AxiosRequestConfig<P>) {
-    return this.axios.post<D, IPromise<D>, P>(url, data, { ...config })
+  public post<D = unknown, P = unknown, L = unknown>(
+    url: string,
+    data?: P,
+    config?: AxiosRequestConfig<P>,
+  ) {
+    return this.axios.post<D, IPromise<D, L>, P>(url, data, { ...config })
   }
 }
 

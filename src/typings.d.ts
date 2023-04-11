@@ -17,9 +17,9 @@ declare module '@mantine/core' {
   }
 
   interface MantineThemeOther {
-    headerHeight: number | string
-    navHeight: number | string
-    pageSpacing: number | string
+    headerHeight: string
+    navHeight: string
+    pageSpacing: string
     zIndex: {
       loading: number
       header: number

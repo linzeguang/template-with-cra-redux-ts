@@ -1,4 +1,7 @@
+export * from './Box'
 export * from './Button'
 export * from './Drawer'
+export * from './Image'
 export * from './Loading'
 export * from './Modal'
+export * from './NoData'

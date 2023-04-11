@@ -48,6 +48,7 @@
     "import/no-anonymous-default-export": "off",
     "simple-import-sort/imports": "error",
     "simple-import-sort/exports": "error",
-    "react/self-closing-comp": ["error"]
+    "react/self-closing-comp": ["error"],
+    "react/display-name": "off"
   }
 }

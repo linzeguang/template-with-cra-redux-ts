@@ -2,6 +2,9 @@ import { type MantineThemeOverride, rem } from '@mantine/core'
 
 const components: MantineThemeOverride['components'] = {
   Button: {
+    defaultProps: {
+      size: 'md',
+    },
     variants: {
       outline: (theme) => ({
         root: {
@@ -15,12 +18,19 @@ const components: MantineThemeOverride['components'] = {
       gradient: (theme) => ({
         root: {
           padding: 1,
-          color: theme.colors.dark[7],
+          color: theme.colors.gold[8],
           ...theme.fn.hover({ backgroundSize: 'auto' }),
         },
         inner: {
           width: '100%',
           borderRadius: '0.5rem',
+        },
+      }),
+      subtle: (theme) => ({
+        root: {
+          ':active': {
+            background: 'none',
+          },
         },
       }),
     },
@@ -144,6 +154,43 @@ const components: MantineThemeOverride['components'] = {
           width: '100%',
           height: '100%',
         },
+      },
+    },
+  },
+  TextInput: {
+    styles: (theme) => ({
+      input: {
+        fontSize: rem(14),
+        lineHeight: 1,
+        borderRadius: '0.5rem',
+
+        '::placeholder': {
+          fontSize: rem(12),
+          color: theme.colors.dark[0],
+        },
+      },
+    }),
+  },
+  Checkbox: {
+    styles: {
+      root: {
+        width: '90%',
+      },
+      body: {
+        alignItems: 'flex-start',
+      },
+      inner: {
+        width: 'auto',
+        height: '1rem',
+        display: 'flex',
+        alignItems: 'center',
+      },
+      input: {
+        display: 'none',
+      },
+      icon: {
+        transform: 'none',
+        opacity: 1,
       },
     },
   },

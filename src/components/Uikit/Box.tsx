@@ -8,6 +8,10 @@ export const Box = styled.div`
   padding-right: ${({ theme }) => theme.other.pageSpacing};
 `
 
+export const FixedBox = styled(Flex)`
+  position: fixed;
+`
+
 export const FlexColumn = styled(Flex)``
 FlexColumn.defaultProps = {
   direction: 'column',

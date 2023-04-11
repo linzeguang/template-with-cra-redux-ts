@@ -5,6 +5,7 @@ const globalStyles: MantineThemeOverride['globalStyles'] = (theme) => ({
     padding: 0,
     background: 'none',
     border: 'none',
+    outline: 'none !important',
   },
   a: {
     textDecoration: 'none',

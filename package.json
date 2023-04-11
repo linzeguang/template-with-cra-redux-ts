@@ -29,11 +29,14 @@
     "version-tag:prerelease": "npm run release -- --prerelease"
   },
   "dependencies": {
+    "@ahooksjs/use-url-state": "^3.5.1",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
     "@mantine/core": "^6.0.5",
+    "@mantine/form": "^6.0.6",
     "@mantine/hooks": "^6.0.5",
     "@mantine/modals": "^6.0.6",
+    "@mantine/notifications": "^6.0.6",
     "@reduxjs/toolkit": "^1.9.2",
     "ahooks": "^3.7.5",
     "axios": "^1.3.4",
