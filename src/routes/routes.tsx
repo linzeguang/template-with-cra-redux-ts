@@ -12,6 +12,8 @@ const Home = React.lazy(() => import('@/pages/Home'))
 const Sign = React.lazy(() => import('@/pages/Sign'))
 const Settings = React.lazy(() => import('@/pages/Settings'))
 const SettingsSecurityCenter = React.lazy(() => import('@/pages/Settings/SecurityCenter'))
+const SettingsPassword = React.lazy(() => import('@/pages/Settings/Password'))
+const SettingsMobile = React.lazy(() => import('@/pages/Settings/Mobile'))
 const Member = React.lazy(() => import('@/pages/Member'))
 const Account = React.lazy(() => import('@/pages/Account'))
 const Wallet = React.lazy(() => import('@/pages/Wallet'))
@@ -25,40 +27,64 @@ export const routes: IRoute[] = [
     showNavs,
   },
   {
-    path: '/sign',
+    path: 'sign',
     element: <Sign />,
     showHeader,
   },
   {
-    path: '/member',
+    path: 'member',
     element: <Member />,
     showNavs,
+    auth,
   },
   {
-    path: '/account',
+    path: 'account',
     element: <Account />,
     showHeader,
   },
   {
-    path: '/wallet',
+    path: 'wallet',
     element: <Wallet />,
     showHeader,
   },
   {
-    path: '/bet',
+    path: 'bet',
     element: <Bet />,
     showHeader,
   },
   {
-    path: '/settings',
-    element: <Settings />,
+    path: 'settings',
     children: [
       {
-        path: 'security-center',
-        name: i18n.t('settings.securityCenter'),
-        element: <SettingsSecurityCenter />,
+        index: true,
+        element: <Settings />,
+        name: i18n.t('settings'),
         showHeader,
-        auth,
+      },
+      {
+        path: 'security-center',
+        children: [
+          {
+            index: true,
+            name: i18n.t('settings.securityCenter'),
+            element: <SettingsSecurityCenter />,
+            showHeader,
+            // auth,
+          },
+          {
+            path: 'password',
+            element: <SettingsPassword />,
+            showHeader,
+            // auth,
+          },
+          {
+            path: 'mobile',
+            name: i18n.t('settings.changeMobileNumber'),
+            element: <SettingsMobile />,
+            showHeader,
+            // auth,
+          },
+        ],
       },
     ],
   },

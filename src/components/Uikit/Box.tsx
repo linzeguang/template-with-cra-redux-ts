@@ -3,7 +3,7 @@ import { Flex, Stack } from '@mantine/core'
 
 export const Card = styled(Stack)``
 
-export const Box = styled.div`
+export const PageMain = styled.div`
   padding-left: ${({ theme }) => theme.other.pageSpacing};
   padding-right: ${({ theme }) => theme.other.pageSpacing};
 `

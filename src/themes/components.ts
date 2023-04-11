@@ -197,6 +197,30 @@ const components: MantineThemeOverride['components'] = {
       },
     },
   },
+  Notification: {
+    defaultProps: {
+      withCloseButton: false,
+      // withBorder: false,
+      radius: 'md',
+    },
+    styles: {
+      root: {
+        paddingLeft: '0.625rem',
+        backgroundColor: '#808080',
+
+        '::before': {
+          display: 'none',
+        },
+      },
+      body: {
+        marginRight: 0,
+      },
+      description: {
+        textAlign: 'center',
+        color: '#fff',
+      },
+    },
+  },
 }
 
 export default components

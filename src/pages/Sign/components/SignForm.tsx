@@ -5,15 +5,14 @@ import { useModel } from 'foca'
 import useUrlState from '@ahooksjs/use-url-state'
 import styled from '@emotion/styled'
 import type { ButtonProps, TextProps } from '@mantine/core'
-import { Alert, Button, createPolymorphicComponent, rem, Space, Text } from '@mantine/core'
+import { Button, createPolymorphicComponent, rem, Space, Text } from '@mantine/core'
 import { useForm } from '@mantine/form'
 import { useDisclosure, useScrollIntoView } from '@mantine/hooks'
-import { notifications } from '@mantine/notifications'
 
 import { user } from '@/apis'
 import { signImages } from '@/assets/images'
 import { Write } from '@/components/Svgr'
-import { Box, FlexColumn, Image } from '@/components/Uikit'
+import { FlexColumn, Image, PageMain, useToast } from '@/components/Uikit'
 import { regular } from '@/constants'
 import { userModel } from '@/models'
 
@@ -24,6 +23,7 @@ import type { SignData, SignType } from './types'
 const SignForm: React.FC = () => {
   const { t } = useTranslation()
   const nagivate = useNavigate()
+  const toast = useToast()
   const [querys, setQuerys] = useUrlState<{ signType: SignType }>(
     { signType: 'login' },
     { navigateMode: 'replace' },
@@ -128,13 +128,10 @@ const SignForm: React.FC = () => {
         nagivate('/', { replace: true })
       } catch (error) {
         loadingHandlers.close()
-        notifications.show({
-          color: 'red',
-          message: <>{error}</>,
-        })
+        toast(<>{error}</>)
       }
     },
-    [form, loadingHandlers, nagivate, scrollIntoView, signType],
+    [form, loadingHandlers, nagivate, scrollIntoView, signType, toast],
   )
 
   return (
@@ -160,7 +157,11 @@ const SignForm: React.FC = () => {
               {signType === 'login' ? (
                 <>
                   <Space h='xs' />
-                  <Button size='xs' variant='subtle'>
+                  <Button
+                    size='xs'
+                    variant='subtle'
+                    onClick={() => nagivate('/settings/security-center/password?type=reset')}
+                  >
                     {t('sign.forgot')}
                   </Button>
                 </>
@@ -183,7 +184,7 @@ const SignForm: React.FC = () => {
 
 export default SignForm
 
-const Wrapper = styled(Box)`
+const Wrapper = styled(PageMain)`
   margin-top: ${rem(24)};
   .card-bg {
     position: relative;
