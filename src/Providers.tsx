@@ -1,28 +1,23 @@
+import './store'
+
 import type { PropsWithChildren } from 'react'
 import React, { Fragment } from 'react'
-import { Provider } from 'react-redux'
-import { persistStore } from 'redux-persist'
-import { PersistGate } from 'redux-persist/integration/react'
+import { FocaProvider } from 'foca'
 import { ModalsProvider } from '@mantine/modals'
 import { Notifications } from '@mantine/notifications'
 
-import store from './stores'
 import ThemeProvider from './themes'
-
-const persistor = persistStore(store)
 
 const Providers: React.FC<PropsWithChildren> = (props) => {
   return (
-    <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
-        <ThemeProvider>
-          <Notifications />
-          <ModalsProvider>
-            <Fragment {...props} />
-          </ModalsProvider>
-        </ThemeProvider>
-      </PersistGate>
-    </Provider>
+    <FocaProvider>
+      <ThemeProvider>
+        <Notifications position='top-center' />
+        <ModalsProvider>
+          <Fragment {...props} />
+        </ModalsProvider>
+      </ThemeProvider>
+    </FocaProvider>
   )
 }
 

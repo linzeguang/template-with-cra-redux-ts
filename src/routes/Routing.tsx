@@ -1,29 +1,33 @@
 import React from 'react'
+import { useCallback } from 'react'
 import { Navigate, useRoutes } from 'react-router-dom'
+import { useModel } from 'foca'
 
-import store from '@/stores/store'
+import { userModel } from '@/models'
 
 import { routes } from './routes'
 import type { IRoute } from './types'
 
-const renderRoutes = (routes: IRoute[]) => {
-  const { user } = store.getState()
-  const { isLogin } = user
-
-  return routes.map((route) => {
-    const { auth, redirect, children } = route
-
-    if (children) route.children = renderRoutes(children)
-
-    if (redirect) route.element = <Navigate to={redirect} />
-
-    if (auth && !isLogin) route.element = <Navigate to='/sign' replace />
-
-    return route
-  })
-}
-
 const Routing: React.FC = () => {
+  const { isLogin } = useModel(userModel)
+
+  const renderRoutes = useCallback(
+    (routes: IRoute[]) => {
+      return routes.map((route) => {
+        const { auth, redirect, children } = route
+
+        if (children) route.children = renderRoutes(children)
+
+        if (redirect) route.element = <Navigate to={redirect} />
+
+        if (auth && !isLogin) route.element = <Navigate to='/sign' replace />
+
+        return route
+      })
+    },
+    [isLogin],
+  )
+
   return useRoutes(renderRoutes(routes))
 }
 

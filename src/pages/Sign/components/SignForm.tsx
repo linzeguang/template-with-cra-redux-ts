@@ -1,18 +1,21 @@
 import React, { useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
+import { useNavigate } from 'react-router-dom'
+import { useModel } from 'foca'
 import useUrlState from '@ahooksjs/use-url-state'
 import styled from '@emotion/styled'
 import type { ButtonProps, TextProps } from '@mantine/core'
-import { Button, createPolymorphicComponent, rem, Space, Text } from '@mantine/core'
+import { Alert, Button, createPolymorphicComponent, rem, Space, Text } from '@mantine/core'
 import { useForm } from '@mantine/form'
 import { useDisclosure, useScrollIntoView } from '@mantine/hooks'
+import { notifications } from '@mantine/notifications'
 
+import { user } from '@/apis'
 import { signImages } from '@/assets/images'
 import { Write } from '@/components/Svgr'
 import { Box, FlexColumn, Image } from '@/components/Uikit'
 import { regular } from '@/constants'
-import { selectSignArgeement } from '@/features/userSlice'
-import { useAppSelector } from '@/stores'
+import { userModel } from '@/models'
 
 import { Checkbox, NormalInput, PasswordInput } from './Form'
 import OrConnection from './OrConnection'
@@ -20,9 +23,14 @@ import type { SignData, SignType } from './types'
 
 const SignForm: React.FC = () => {
   const { t } = useTranslation()
-  const [{ signType }, setQuerys] = useUrlState<{ signType: SignType }>({ signType: 'login' })
-  const signArgeement = useAppSelector(selectSignArgeement)
-  const [loading, handlers] = useDisclosure(false)
+  const nagivate = useNavigate()
+  const [querys, setQuerys] = useUrlState<{ signType: SignType }>(
+    { signType: 'login' },
+    { navigateMode: 'replace' },
+  )
+  const signType: SignType = querys.signType
+  const { signArgeement } = useModel(userModel)
+  const [loading, loadingHandlers] = useDisclosure(false)
   const { scrollIntoView, targetRef } = useScrollIntoView<HTMLInputElement>({})
   const form = useForm<SignData>({
     initialValues: {
@@ -103,15 +111,30 @@ const SignForm: React.FC = () => {
   }, [form, setQuerys, signType])
 
   const handleSubmit = useCallback(
-    (values: SignData) => {
-      const { argeement } = values
+    async (values: SignData) => {
+      const { argeement, telephone, username, password } = values
       if (!argeement) {
         form.setFieldError('argeement', true)
         return scrollIntoView({ alignment: 'center' })
       }
-      handlers.open()
+      loadingHandlers.open()
+
+      try {
+        const { data, isSuccess, message } = await (signType === 'login'
+          ? user.loginByAccount({ account: username, password })
+          : user.registerByAccount({ account: username, password, telephone: telephone || '' }))
+        if (!isSuccess) throw message
+        userModel.updateUserInfo(data)
+        nagivate('/', { replace: true })
+      } catch (error) {
+        loadingHandlers.close()
+        notifications.show({
+          color: 'red',
+          message: <>{error}</>,
+        })
+      }
     },
-    [form, handlers, scrollIntoView],
+    [form, loadingHandlers, nagivate, scrollIntoView, signType],
   )
 
   return (

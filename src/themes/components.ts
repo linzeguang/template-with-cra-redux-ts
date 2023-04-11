@@ -192,6 +192,9 @@ const components: MantineThemeOverride['components'] = {
         transform: 'none',
         opacity: 1,
       },
+      error: {
+        display: 'none',
+      },
     },
   },
 }

@@ -8,7 +8,7 @@ import type {
 } from 'axios'
 import axios from 'axios'
 
-import store from '@/stores/store'
+import { userModel } from '@/models'
 
 import type { IPromise } from './types'
 import { repeatUrl } from './url'
@@ -36,8 +36,7 @@ export class Services {
     this.axios.interceptors.request.use((config) => {
       // 判断是否需要做重复请求处理
       this.checkPending(config)
-      const { user } = store.getState()
-      const { token } = user
+      const { token } = userModel.state
       if (token) config.headers.set({ token: 'Bearer ' + token })
 
       return config
