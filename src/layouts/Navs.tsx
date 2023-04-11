@@ -1,32 +1,36 @@
 import React, { useMemo } from 'react'
-import { useTranslation } from 'react-i18next'
-import { Link, useLocation } from 'react-router-dom'
 import styled from '@emotion/styled'
 import { Flex, Group, rem } from '@mantine/core'
 
+import type { RouterType, TranslationType } from '@/components/HOC'
+import { WithRouter, WithTranslation } from '@/components/HOC'
 import { NavIcon } from '@/components/Svgr'
+import { useStayTuned } from '@/components/Uikit'
 
 interface Props {
   visible: boolean
 }
 
-const Navs: React.FC<Props> = ({ visible }) => {
-  const { t } = useTranslation()
-  const { pathname } = useLocation()
-
+const Navs: React.FC<Props & TranslationType & RouterType> = ({
+  visible,
+  t,
+  pathname,
+  navigate,
+}) => {
+  const toastStayTuned = useStayTuned()
   const navs = useMemo(
     () => [
       {
         defaultIcon: <NavIcon.Members />,
         selectedIcon: <NavIcon.MembersSelected />,
         name: t('nav.members'),
-        href: '/members',
+        href: 'members',
       },
       {
         defaultIcon: <NavIcon.Promotion />,
         selectedIcon: <NavIcon.PromotionSelected />,
         name: t('nav.promotion'),
-        href: '/promotion',
+        // href: 'promotion',
       },
       {
         defaultIcon: (
@@ -46,13 +50,13 @@ const Navs: React.FC<Props> = ({ visible }) => {
         defaultIcon: <NavIcon.Deposit />,
         selectedIcon: <NavIcon.DepositSelected />,
         name: t('nav.deposit'),
-        href: '/deposit',
+        // href: 'deposit',
       },
       {
         defaultIcon: <NavIcon.Services />,
         selectedIcon: <NavIcon.ServicesSelected />,
         name: t('nav.services'),
-        href: '/services',
+        // href: 'services',
       },
     ],
     [t],
@@ -62,7 +66,13 @@ const Navs: React.FC<Props> = ({ visible }) => {
   return (
     <NavsWrapper grow spacing={0}>
       {navs.map((nav) => (
-        <NavButton key={nav.href} to={nav.href}>
+        <NavButton
+          key={nav.name}
+          onClick={() => {
+            if (nav.href) navigate(nav.href)
+            else toastStayTuned()
+          }}
+        >
           {pathname === nav.href ? nav.selectedIcon : nav.defaultIcon}
           <span>{nav.name}</span>
         </NavButton>
@@ -71,7 +81,7 @@ const Navs: React.FC<Props> = ({ visible }) => {
   )
 }
 
-export default Navs
+export default WithTranslation(WithRouter(Navs)) as React.FC<Props>
 
 const NavsWrapper = styled(Group)`
   position: fixed;
@@ -83,7 +93,7 @@ const NavsWrapper = styled(Group)`
   background-color: ${({ theme }) => theme.black};
 `
 
-const NavButton = styled(Link)`
+const NavButton = styled.a`
   position: relative;
   flex: 1;
   height: 100%;

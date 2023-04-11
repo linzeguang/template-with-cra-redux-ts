@@ -14,7 +14,7 @@ const Settings = React.lazy(() => import('@/pages/Settings'))
 const SettingsSecurityCenter = React.lazy(() => import('@/pages/Settings/SecurityCenter'))
 const SettingsPassword = React.lazy(() => import('@/pages/Settings/Password'))
 const SettingsMobile = React.lazy(() => import('@/pages/Settings/Mobile'))
-const Member = React.lazy(() => import('@/pages/Member'))
+const Members = React.lazy(() => import('@/pages/Members'))
 const Account = React.lazy(() => import('@/pages/Account'))
 const Wallet = React.lazy(() => import('@/pages/Wallet'))
 const Bet = React.lazy(() => import('@/pages/Bet'))
@@ -32,8 +32,8 @@ export const routes: IRoute[] = [
     showHeader,
   },
   {
-    path: 'member',
-    element: <Member />,
+    path: 'members',
+    element: <Members />,
     showNavs,
     auth,
   },

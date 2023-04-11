@@ -1,9 +1,10 @@
 import React, { useMemo } from 'react'
-import { useNavigate } from 'react-router-dom'
 import styled from '@emotion/styled'
 import { Center, Flex, px, rem, Text, useMantineTheme } from '@mantine/core'
 import { useWindowScroll } from '@mantine/hooks'
 
+import type { RouterType } from '@/components/HOC'
+import { WithRouter } from '@/components/HOC'
 import { Back } from '@/components/Svgr'
 
 export interface HeaderNodes {
@@ -18,15 +19,15 @@ interface Props extends HeaderNodes {
   title?: string | null
 }
 
-const Header: React.FC<Props> = ({
+const Header: React.FC<Props & RouterType> = ({
   alpha = true,
   visible,
   title,
   leftNode,
   centerNode,
   rightNode,
+  navigate,
 }) => {
-  const navigate = useNavigate()
   const { fn, other, black } = useMantineTheme()
   const [{ y: scrollY }] = useWindowScroll()
   const headerHeight = px(other.headerHeight)
@@ -58,7 +59,7 @@ const Header: React.FC<Props> = ({
   )
 }
 
-export default Header
+export default WithRouter(Header) as React.FC<Props>
 
 const HeaderWrapper = styled.header`
   position: fixed;

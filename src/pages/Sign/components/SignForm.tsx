@@ -1,6 +1,4 @@
 import React, { useCallback, useMemo } from 'react'
-import { useTranslation } from 'react-i18next'
-import { useNavigate } from 'react-router-dom'
 import { useModel } from 'foca'
 import useUrlState from '@ahooksjs/use-url-state'
 import styled from '@emotion/styled'
@@ -11,6 +9,8 @@ import { useDisclosure, useScrollIntoView } from '@mantine/hooks'
 
 import { user } from '@/apis'
 import { signImages } from '@/assets/images'
+import type { RouterType, TranslationType } from '@/components/HOC'
+import { WithRouter, WithTranslation } from '@/components/HOC'
 import { Write } from '@/components/Svgr'
 import { FlexColumn, Image, PageMain, useToast } from '@/components/Uikit'
 import { regular } from '@/constants'
@@ -20,9 +20,7 @@ import { Checkbox, NormalInput, PasswordInput } from './Form'
 import OrConnection from './OrConnection'
 import type { SignData, SignType } from './types'
 
-const SignForm: React.FC = () => {
-  const { t } = useTranslation()
-  const nagivate = useNavigate()
+const SignForm: React.FC<TranslationType & RouterType> = ({ t, navigate }) => {
   const toast = useToast()
   const [querys, setQuerys] = useUrlState<{ signType: SignType }>(
     { signType: 'login' },
@@ -125,13 +123,13 @@ const SignForm: React.FC = () => {
           : user.registerByAccount({ account: username, password, telephone: telephone || '' }))
         if (!isSuccess) throw message
         userModel.updateUserInfo(data)
-        nagivate('/', { replace: true })
+        navigate('/', { replace: true })
       } catch (error) {
         loadingHandlers.close()
         toast(<>{error}</>)
       }
     },
-    [form, loadingHandlers, nagivate, scrollIntoView, signType, toast],
+    [form, loadingHandlers, navigate, scrollIntoView, signType, toast],
   )
 
   return (
@@ -160,7 +158,7 @@ const SignForm: React.FC = () => {
                   <Button
                     size='xs'
                     variant='subtle'
-                    onClick={() => nagivate('/settings/security-center/password?type=reset')}
+                    onClick={() => navigate('/settings/security-center/password?type=reset')}
                   >
                     {t('sign.forgot')}
                   </Button>
@@ -182,7 +180,7 @@ const SignForm: React.FC = () => {
   )
 }
 
-export default SignForm
+export default WithTranslation(WithRouter(SignForm)) as React.FC
 
 const Wrapper = styled(PageMain)`
   margin-top: ${rem(24)};

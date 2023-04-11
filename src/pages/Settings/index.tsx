@@ -1,13 +1,11 @@
 import React, { useMemo } from 'react'
-import { useTranslation } from 'react-i18next'
-import { useNavigate } from 'react-router-dom'
 
+import type { RouterType, TranslationType } from '@/components/HOC'
+import { WithRouter, WithTranslation } from '@/components/HOC'
 import type { SettingsItemProps } from '@/components/Uikit'
 import { PageMain, SettingsItem, useStayTuned } from '@/components/Uikit'
 
-const Settings: React.FC = () => {
-  const { t } = useTranslation()
-  const navigate = useNavigate()
+const Settings: React.FC<TranslationType & RouterType> = ({ t, navigate }) => {
   const toastStayTuned = useStayTuned()
 
   const list = useMemo<SettingsItemProps[]>(
@@ -37,4 +35,4 @@ const Settings: React.FC = () => {
   )
 }
 
-export default Settings
+export default WithTranslation(WithRouter(Settings)) as React.FC

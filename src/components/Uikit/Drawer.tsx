@@ -19,7 +19,6 @@ export interface DrawerProps extends Partial<MDrawerProps> {
 
 export const Drawer: React.FC<DrawerProps> = (props) => {
   const { t } = useTranslation()
-
   const { children, opened = false, targetNode, onClose, onOpen, ...rest } = props
   const [visible, { open, close }] = useDisclosure(opened)
 

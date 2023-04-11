@@ -5,8 +5,8 @@ import { LoadingOverlay, useMantineTheme } from '@mantine/core'
 
 const LoadingGif = styled.img`
   margin: auto;
-  max-width: 80%;
-  max-height: 60%;
+  max-width: 40%;
+  max-height: 40%;
 `
 
 export const Loading: React.FC<LoadingOverlayProps> = (props) => {

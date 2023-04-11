@@ -1,17 +1,19 @@
 import React, { useMemo } from 'react'
-import { useTranslation } from 'react-i18next'
-import { useNavigate } from 'react-router-dom'
 import { useModel } from 'foca'
 
+import {
+  type RouterType,
+  type TranslationType,
+  WithRouter,
+  WithTranslation,
+} from '@/components/HOC'
 import type { SettingsItemProps } from '@/components/Uikit'
 import { PageMain, SettingsItem } from '@/components/Uikit'
 import { userModel } from '@/models'
 
 const basePath = '/settings/security-center'
 
-const SecurityCenter: React.FC = () => {
-  const { t } = useTranslation()
-  const navigate = useNavigate()
+const SecurityCenter: React.FC<TranslationType & RouterType> = ({ t, navigate }) => {
   const { userInfo } = useModel(userModel)
 
   const list = useMemo<SettingsItemProps[]>(
@@ -37,4 +39,4 @@ const SecurityCenter: React.FC = () => {
   )
 }
 
-export default SecurityCenter
+export default WithTranslation(WithRouter(SecurityCenter)) as React.FC
