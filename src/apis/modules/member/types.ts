@@ -32,7 +32,7 @@ export interface FindPwdParams extends TelephoneParams, SmsCodeParams {
   newPassword: string
 }
 
-export interface ModifyTelParams extends CheckTelParams, SmsCodeParams {}
+export interface ModifyTelParams extends CheckTelParams, Partial<SmsCodeParams> {}
 
 export interface BetRecordParams {
   betStatus?: string

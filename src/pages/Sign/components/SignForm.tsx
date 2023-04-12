@@ -162,7 +162,7 @@ const SignForm: React.FC<TranslationType & RouterType> = ({ t, navigate }) => {
                   <Button
                     size='xs'
                     variant='subtle'
-                    onClick={() => navigate('/settings/security-center/password?type=reset')}
+                    onClick={() => navigate('/settings/security-center/password?type=retrieve')}
                   >
                     {t('sign.forgot')}
                   </Button>

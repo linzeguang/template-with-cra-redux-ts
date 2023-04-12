@@ -10,17 +10,17 @@ const baseName = baseUrl
 
 // 登录
 export const loginByAccount = (params: LoginParams) =>
-  services.post<MemberInfo, LoginParams>(baseName + '/loginByAccount', { ...params })
+  services.post<MemberInfo, LoginParams>(baseName + '/login', { ...params })
 
 // 注册
 export const registerByAccount = (params: RegisterParams) =>
-  services.post<MemberInfo, RegisterParams>(baseName + '/registerByAccount', { ...params })
+  services.post<MemberInfo, RegisterParams>(baseName + '/register', { ...params })
 
 // 登出
 export const logout = () => {
   const { token } = userModel.state
 
   return services.post(baseName + '/logout', undefined, {
-    headers: { token },
+    headers: { token: 'Bearer ' + token },
   })
 }

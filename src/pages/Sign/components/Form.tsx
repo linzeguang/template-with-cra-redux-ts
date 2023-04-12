@@ -8,7 +8,7 @@ import { Checked, EyeNotVisible, EyeVisible, UnChecked } from '@/components/Svgr
 TextInput.defaultProps = {
   size: 'md',
   rightSectionWidth: '3rem',
-  styles: {
+  styles: (theme) => ({
     root: {
       position: 'relative',
       width: '100%',
@@ -26,6 +26,16 @@ TextInput.defaultProps = {
     },
     input: {
       paddingLeft: rem(14),
+      fontSize: rem(14),
+      lineHeight: 1,
+      color: theme.colors.gold[8],
+      borderRadius: '0.5rem',
+      borderColor: theme.colors.dark[0],
+
+      '::placeholder': {
+        fontSize: rem(12),
+        color: theme.colors.dark[0],
+      },
     },
     error: {
       position: 'absolute',
@@ -34,12 +44,10 @@ TextInput.defaultProps = {
       paddingLeft: rem(14),
       fontSize: rem(10),
     },
-  },
+  }),
 }
 
-export const NormalInput = React.memo((props: TextInputProps) => {
-  return <TextInput {...props} />
-})
+export const NormalInput = React.memo((props: TextInputProps) => <TextInput {...props} />)
 
 export const PasswordInput = React.memo((props: TextInputProps) => {
   const [visible, handlers] = useDisclosure(false)

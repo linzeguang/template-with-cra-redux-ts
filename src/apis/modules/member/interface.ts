@@ -15,21 +15,21 @@ import type {
   TelephoneParams,
 } from './types'
 
-const baseName = baseUrl + '/member'
+const baseName = baseUrl
 
 // 获取会员信息
-export const memberInfo = () => services.get<MemberInfo>(baseName + '/info')
+export const memberInfo = () => services.get<MemberInfo>(baseName + '/getUserInfo')
 
 // 会员游戏钱包转出
-export const withdraw = () => services.get<boolean>(baseName + '/withdraw')
+export const withdraw = () => services.post<boolean>(baseUrl + '/withdraw')
 
 // 获取验证码
 export const sendSmsCode = (params: TelephoneParams) =>
-  services.post<EmptyData, TelephoneParams>(baseName + '/login/sendSmsCode', { ...params })
+  services.post<EmptyData, TelephoneParams>(baseName + '/sendSmsCode', { ...params })
 
 // 校验验证码
 export const checkSmsCode = (parmas: CheckSmsParams) =>
-  services.post<EmptyData, CheckSmsParams>(baseName + '/login/checkSmsCode', { ...parmas })
+  services.post<EmptyData, CheckSmsParams>(baseName + '/checkSmsCode', { ...parmas })
 
 // 修改密码
 export const modifyPassword = (parmas: ModifyPwdParams) =>
@@ -37,21 +37,21 @@ export const modifyPassword = (parmas: ModifyPwdParams) =>
 
 // 找回密码
 export const findPassword = (params: FindPwdParams) =>
-  services.post<EmptyData, FindPwdParams>(baseName + '/login/findPassword', { ...params })
+  services.post<EmptyData, FindPwdParams>(baseName + '/findPassword', { ...params })
 
 // 修改手机号-校验手机号
 export const checkTelephone = (parmas: CheckTelParams) =>
-  services.post<EmptyData, CheckTelParams>(baseName + '/member/checkTelephone', { ...parmas })
+  services.post<EmptyData, CheckTelParams>('/aggre/wap/member/checkTelephone', { ...parmas })
 
 // 修改手机
 export const modifyTelephone = (parmas: ModifyTelParams) =>
-  services.post<EmptyData, ModifyTelParams>(baseName + '/member/modifyTelephone', { ...parmas })
+  services.post<EmptyData, ModifyTelParams>(baseName + '/modifyTelephone', { ...parmas })
 
 // 注单列表
 export const betRecord = (params: IListParams<BetRecordParams>) =>
-  services.post<BetRecord[], IListParams<BetRecordParams>, IList>(baseName + '/member/getBet', {
+  services.post<BetRecord[], IListParams<BetRecordParams>, IList>(baseName + '/getBet', {
     ...params,
   })
 
 // 注单详情
-export const betRecordData = (id: number) => services.get<BetRecord>(baseName + '/member/bet/' + id)
+export const betRecordData = (id: number) => services.get<BetRecord>(baseName + '/bet/' + id)

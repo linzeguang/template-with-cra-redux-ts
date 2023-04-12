@@ -12,17 +12,20 @@ const Routing: React.FC = () => {
   const { isLogin } = useModel(userModel)
 
   const renderRoutes = useCallback(
-    (routes: IRoute[]) => {
-      return routes.map((route) => {
+    (_routes: IRoute[]) => {
+      return _routes.map((route) => {
         const { auth, redirect, children } = route
 
-        if (children) route.children = renderRoutes(children)
+        // 深拷贝避免原始配置被篡改
+        const newRoute = Object.assign({}, route)
 
-        if (redirect) route.element = <Navigate to={redirect} />
+        if (children) newRoute.children = renderRoutes(children)
 
-        if (auth && !isLogin) route.element = <Navigate to='/sign' replace />
+        if (redirect) newRoute.element = <Navigate to={redirect} />
 
-        return route
+        if (auth && !isLogin) newRoute.element = <Navigate to='/sign' replace />
+
+        return newRoute
       })
     },
     [isLogin],

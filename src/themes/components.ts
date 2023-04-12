@@ -157,20 +157,6 @@ const components: MantineThemeOverride['components'] = {
       },
     },
   },
-  TextInput: {
-    styles: (theme) => ({
-      input: {
-        fontSize: rem(14),
-        lineHeight: 1,
-        borderRadius: '0.5rem',
-
-        '::placeholder': {
-          fontSize: rem(12),
-          color: theme.colors.dark[0],
-        },
-      },
-    }),
-  },
   Checkbox: {
     styles: {
       root: {

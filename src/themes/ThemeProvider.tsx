@@ -10,7 +10,7 @@ export const theme: MantineThemeOverride = {
   colorScheme: 'dark',
   colors: {
     dark: ['#D6A400', '', '', '', '', '#3D2F00', '#261D00', '#000', '', ''],
-    gold: ['', '', '', '', '#B58B00', '#D6A400', '#BDAE2A', '#FFEB3B', '#FFEDC7', ''],
+    gold: ['', '', '', '#785C00', '#B58B00', '#D6A400', '#BDAE2A', '#FFEB3B', '#FFEDC7', ''],
   },
   white: '#fff',
   black: '#000',

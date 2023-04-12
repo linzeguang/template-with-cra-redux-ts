@@ -56,10 +56,15 @@ export const userModel = defineModel('user', {
   },
   events: {
     onInit() {
-      console.log('foca userModel init')
       if (!this.state.isLogin) return
       this.fetchUserInfo()
       this.fetchWalletInfo()
+    },
+    onChange(prevState, nextState) {
+      if (nextState.isLogin && prevState.isLogin !== nextState.isLogin) {
+        this.fetchUserInfo()
+        this.fetchWalletInfo()
+      }
     },
   },
 })

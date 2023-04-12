@@ -46,11 +46,9 @@ const Header: React.FC<Props & RouterType> = ({
         {leftNode || <Back onClick={() => navigate(-1)} />}
       </Flex>
       <Center>
-        {centerNode || (
-          <Text weight={400} size='1rem' color='gold'>
-            {title}
-          </Text>
-        )}
+        <Text weight={400} size='1rem'>
+          {centerNode || title}
+        </Text>
       </Center>
       <Flex justify={'flex-end'} align={'center'}>
         {rightNode}

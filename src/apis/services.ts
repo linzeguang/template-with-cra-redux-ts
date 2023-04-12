@@ -37,7 +37,7 @@ export class Services {
       // 判断是否需要做重复请求处理
       this.checkPending(config)
       const { token } = userModel.state
-      if (token) config.headers.set({ token: 'Bearer ' + token })
+      if (token) config.headers.set({ authorization: token, token: 'Bearer ' + token })
 
       return config
     })
