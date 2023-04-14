@@ -24,13 +24,13 @@ const Navs: React.FC<Props & TranslationType & RouterType> = ({
         defaultIcon: <NavIcon.Members />,
         selectedIcon: <NavIcon.MembersSelected />,
         name: t('nav.members'),
-        href: 'members',
+        href: '/members',
       },
       {
         defaultIcon: <NavIcon.Promotion />,
         selectedIcon: <NavIcon.PromotionSelected />,
         name: t('nav.promotion'),
-        // href: 'promotion',
+        // href: '/promotion',
       },
       {
         defaultIcon: (
@@ -50,13 +50,13 @@ const Navs: React.FC<Props & TranslationType & RouterType> = ({
         defaultIcon: <NavIcon.Deposit />,
         selectedIcon: <NavIcon.DepositSelected />,
         name: t('nav.deposit'),
-        // href: 'deposit',
+        // href: '/deposit',
       },
       {
         defaultIcon: <NavIcon.Services />,
         selectedIcon: <NavIcon.ServicesSelected />,
         name: t('nav.services'),
-        // href: 'services',
+        // href: '/services',
       },
     ],
     [t],
@@ -116,12 +116,13 @@ const NavButton = styled.a`
 `
 
 const BBWIcon = styled(Flex)`
-  width: 55px;
-  height: 55px;
+  width: ${rem(55)};
+  height: ${rem(55)};
   border-radius: 50%;
-  background-color: ${({ theme }) => theme.colors.dark[6]};
+  background: radial-gradient(#261d00, #322500, #4d3b00);
   border: 1px solid ${({ theme }) => theme.colors.gold[6]};
-  box-shadow: 0px 0px 8px 2px ${({ theme }) => theme.colors.gold[7]};
+  box-shadow: 0px -2px 8px ${({ theme }) => theme.fn.rgba(theme.colors.gold[7], 0.57)},
+    0px 2px 8px ${({ theme }) => theme.fn.rgba(theme.colors.gold[7], 0.57)};
 `
 
 BBWIcon.defaultProps = {

@@ -21,6 +21,8 @@ export const theme: MantineThemeOverride = {
   defaultGradient: { from: '#FFEA4F', to: '#BF8322', deg: 180 },
   components,
   other: {
+    '2x': '@media screen and (-webkit-min-device-pixel-ratio: 2)',
+    '3x': '@media screen and (-webkit-min-device-pixel-ratio: 3)',
     headerHeight: rem(50),
     navHeight: rem(64),
     pageSpacing: '1rem',

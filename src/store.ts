@@ -2,7 +2,7 @@ import { engines, store } from 'foca'
 
 import pka from '../package.json'
 
-import { userModel } from './models'
+import { commonModel, userModel } from './models'
 
 store.init({
   compose: 'redux-devtools',
@@ -11,7 +11,7 @@ store.init({
       key: pka.name,
       version: pka.version,
       engine: engines.localStorage,
-      models: [userModel],
+      models: [commonModel, userModel],
     },
   ],
 })

@@ -49,6 +49,8 @@ const components: MantineThemeOverride['components'] = {
         top: `calc(20px + ${rem(30)})`,
       },
       content: {
+        display: 'flex',
+        flexDirection: 'column',
         paddingTop: 1,
         paddingLeft: 1,
         background: `linear-gradient(
@@ -76,6 +78,11 @@ const components: MantineThemeOverride['components'] = {
         padding: rem(24),
         justifyContent: 'center',
         background: 'none',
+      },
+      body: {
+        flex: 1,
+        display: 'flex',
+        flexDirection: 'column',
       },
       title: {
         color: theme.colors.gold[8],

@@ -8,18 +8,31 @@ import { useDisclosure } from '@mantine/hooks'
 
 import { CancelButton, ConfirmButton } from './Button'
 
-const Button = styled.button`
-  height: 100%;
+const Button = styled.button``
+
+const Content = styled.div`
+  flex: 1;
 `
 
 export interface DrawerProps extends Partial<MDrawerProps> {
+  targetButtonProps?: React.ButtonHTMLAttributes<HTMLButtonElement>
   targetNode: ReactNode
   onOpen?: () => void
+  onConfirm?: () => void
 }
 
 export const Drawer: React.FC<DrawerProps> = (props) => {
   const { t } = useTranslation()
-  const { children, opened = false, targetNode, onClose, onOpen, ...rest } = props
+  const {
+    children,
+    opened = false,
+    targetNode,
+    targetButtonProps,
+    onClose,
+    onOpen,
+    onConfirm,
+    ...rest
+  } = props
   const [visible, { open, close }] = useDisclosure(opened)
 
   const handleClose = useCallback(() => {
@@ -32,9 +45,16 @@ export const Drawer: React.FC<DrawerProps> = (props) => {
     open()
   }, [onOpen, open])
 
+  const handleSubmit = useCallback(() => {
+    onConfirm?.()
+    close()
+  }, [close, onConfirm])
+
   return (
     <React.Fragment>
-      <Button onClick={handleOpen}>{targetNode}</Button>
+      <Button {...targetButtonProps} onClick={handleOpen}>
+        {targetNode}
+      </Button>
       <MDrawer
         opened={visible}
         onClose={handleClose}
@@ -42,11 +62,11 @@ export const Drawer: React.FC<DrawerProps> = (props) => {
         withCloseButton={false}
         {...rest}
       >
-        {children}
+        <Content>{children}</Content>
         <Group position='right' grow>
           <div />
           <CancelButton onClick={handleClose}>{t('cancel')}</CancelButton>
-          <ConfirmButton onClick={handleOpen}>{t('submit')}</ConfirmButton>
+          <ConfirmButton onClick={handleSubmit}>{t('confirm')}</ConfirmButton>
         </Group>
       </MDrawer>
     </React.Fragment>

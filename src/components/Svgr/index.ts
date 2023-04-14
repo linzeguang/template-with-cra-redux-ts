@@ -1,7 +1,7 @@
 /**
  * @Author linzeguang
  * @Date 2023-03-24 10:57:58
- * @LastEditTime 2023-04-10 14:53:05
+ * @LastEditTime 2023-04-14 11:44:11
  * @LastEditors linzeguang
  * @Description
  */
@@ -18,6 +18,8 @@ export { ReactComponent as EyeVisible } from './eye-visible.svg'
 export { ReactComponent as Filters } from './filters.svg'
 export * as MembersIcon from './members'
 export * as NavIcon from './navs'
+export { ReactComponent as NoCollect } from './no-collect.svg'
+export { ReactComponent as Rectangle } from './rectangle.svg'
 export { ReactComponent as Settings } from './settings.svg'
 export { ReactComponent as UnChecked } from './unchecked.svg'
 export { ReactComponent as Write } from './write.svg'

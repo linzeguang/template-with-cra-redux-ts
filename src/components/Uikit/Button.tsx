@@ -30,6 +30,7 @@ export const StepButton = createPolymorphicComponent<'button', ButtonProps>(styl
     rgba(255, 235, 59, 0),
     rgba(255, 235, 59, 1)
   );
+
   .mantine-Button-inner {
     background-color: #382b00;
   }

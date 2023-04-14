@@ -17,6 +17,8 @@ declare module '@mantine/core' {
   }
 
   interface MantineThemeOther {
+    '2x': string
+    '3x': string
     headerHeight: string
     navHeight: string
     pageSpacing: string
