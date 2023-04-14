@@ -4,7 +4,7 @@ import { useModel } from 'foca'
 import styled from '@emotion/styled'
 import { Carousel } from '@mantine/carousel'
 import { rem, Text } from '@mantine/core'
-import { useHover } from '@mantine/hooks'
+import { useFocusWithin } from '@mantine/hooks'
 
 import { homeImages } from '@/assets/images'
 import type { RouterType } from '@/components/HOC'
@@ -16,8 +16,8 @@ const Banners: React.FC<TranslationType & RouterType> = ({ t, navigate }) => {
   const { banners } = useModel(commonModel)
   const { isLogin } = useModel(userModel)
   const toastStayTuned = useStayTuned()
-  const { hovered: loginHovered, ref: loginRef } = useHover<HTMLButtonElement>()
-  const { hovered: registerHovered, ref: registerRef } = useHover<HTMLButtonElement>()
+  const { focused: loginHovered, ref: loginRef } = useFocusWithin<HTMLButtonElement>()
+  const { focused: registerHovered, ref: registerRef } = useFocusWithin<HTMLButtonElement>()
   const autoplay = useRef(Autoplay({ delay: 2500 }))
 
   const loginConfig = useMemo(() => {
@@ -72,11 +72,7 @@ const Banners: React.FC<TranslationType & RouterType> = ({ t, navigate }) => {
           ref={loginRef}
           onClick={() => (isLogin ? toastStayTuned() : navigate(loginConfig.path))}
         >
-          <img
-            alt='login'
-            src={loginConfig.btnBg['1x']}
-            srcSet={`${loginConfig.btnBg['1x']}, ${loginConfig.btnBg['2x']} 2x`}
-          />
+          <img alt='login' src={homeImages['login']['2x']} />
           <Text size='xs' weight='bold'>
             {loginConfig.text}
           </Text>
@@ -85,11 +81,7 @@ const Banners: React.FC<TranslationType & RouterType> = ({ t, navigate }) => {
           ref={registerRef}
           onClick={() => (isLogin ? toastStayTuned() : navigate(registerConfig.path))}
         >
-          <img
-            alt='register'
-            src={registerConfig.btnBg['1x']}
-            srcSet={`${registerConfig.btnBg['1x']}, ${registerConfig.btnBg['2x']} 2x`}
-          />
+          <img alt='register' src={homeImages['register']['2x']} />
           <Text size='xs' weight='bold'>
             {registerConfig.text}
           </Text>
@@ -135,6 +127,12 @@ const SignButton = styled.button`
   height: calc(30 / 375 * 100vw);
   transition: all 50ms;
 
+  :active {
+    img {
+      content: url(${homeImages['registerClicked']['2x']});
+    }
+  }
+
   img {
     position: absolute;
     z-index: -1;
@@ -145,6 +143,12 @@ const SignButton = styled.button`
 
   &.login {
     right: 25.4%;
+
+    :active {
+      img {
+        content: url(${homeImages['loginClicked']['2x']});
+      }
+    }
   }
 
   &.login img {

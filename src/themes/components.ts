@@ -200,6 +200,7 @@ const components: MantineThemeOverride['components'] = {
       root: {
         paddingLeft: '0.625rem',
         backgroundColor: '#808080',
+        border: 'none',
 
         '::before': {
           display: 'none',
@@ -213,6 +214,18 @@ const components: MantineThemeOverride['components'] = {
         color: '#fff',
       },
     },
+  },
+  Skeleton: {
+    styles: (theme) => ({
+      root: {
+        '::before': {
+          backgroundColor: theme.colors.gold[8] + ' !important',
+        },
+        '::after': {
+          background: 'rgba(222, 226, 230, 0.4)',
+        },
+      },
+    }),
   },
 }
 

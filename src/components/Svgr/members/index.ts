@@ -1,12 +1,13 @@
 /**
  * @Author linzeguang
  * @Date 2023-03-28 16:07:14
- * @LastEditTime 2023-03-28 16:17:50
+ * @LastEditTime 2023-04-14 14:05:51
  * @LastEditors linzeguang
  * @Description
  */
 
 export { ReactComponent as Account } from './Account.svg'
+export { default as AvatarBorder } from './avatar-border.svg'
 export { ReactComponent as Betting } from './Betting.svg'
 export { ReactComponent as CustomerService } from './Customer service.svg'
 export { ReactComponent as Deposit } from './Deposit.svg'

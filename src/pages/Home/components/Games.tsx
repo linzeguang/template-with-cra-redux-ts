@@ -231,8 +231,8 @@ const NoCollectIcon = styled(NoCollectSvg)`
   position: absolute;
   right: ${rem(2)};
   top: ${rem(2)};
-  width: 12px;
-  height: 12px;
-  padding: 3px;
+  width: ${rem(12)};
+  height: ${rem(12)};
+  padding: ${rem(3)};
   box-sizing: content-box;
 `
